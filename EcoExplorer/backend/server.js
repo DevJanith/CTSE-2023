@@ -8,6 +8,7 @@ import mongoose from "mongoose";
 import usersRoutes from "./routes/users.routes.js";
 import questionAnswersRoutes from "./routes/questionAnswers.routes.js";
 import marksRoutes from "./routes/marks.routes.js";
+import infoRoutes from "./routes/info.routes.js";
 
 dotenv.config();
 const app = express();
@@ -24,7 +25,7 @@ app.get("/rest-api/v1/", (req, res) => {
 app.use("/rest-api/v1/users", usersRoutes);
 app.use("/rest-api/v1/marks", marksRoutes);
 app.use("/rest-api/v1/question-answers", questionAnswersRoutes);
-
+app.use("/rest-api/v1/info", infoRoutes);
 
 const CONNECTION_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.b6wbfao.mongodb.net/?retryWrites=true&w=majority`;
 
