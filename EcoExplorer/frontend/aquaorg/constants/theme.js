@@ -7,8 +7,14 @@ export const COLORS = {
 
   //custom colors
   lightCustomColor: "#BCE6FF",
-  darkCustomColor: "#015C92"
+  darkCustomColor: "#015C92",
 
+  darkGreen: "#295a54",
+  darkGreen2: "#84945c",
+  darkGreen3: "#529990",
+  lightGreen: "#F1FFF0",
+
+  pink: "#ff6666",
 };
 
 export const SIZES = {

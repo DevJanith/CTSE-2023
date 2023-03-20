@@ -15,6 +15,7 @@ import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const AllEvents = ({ navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -124,7 +125,7 @@ const AllEvents = ({ navigation }) => {
                       <Title style={{ fontWeight: "bold" }}>{item.name}</Title>
 
                       <FAB
-                        icon="plus"
+                        icon="heart-outline"
                         small
                         style={styles.fab}
                         onPress={() => addToInterestedList(item)}
@@ -187,7 +188,7 @@ const AllEvents = ({ navigation }) => {
                           }}
                           style={styles.chip}
                           mode="flat"
-                          selectedColor="#443F3F"
+                          selectedColor={COLORS.white}
                           onPress={() => console.log("Pressed")}
                           key={key}
                         >
@@ -226,18 +227,18 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
 
   fab: {
-    backgroundColor: "#77BF5E",
+    backgroundColor: COLORS.pink,
   },
   snackbar: {
     flex: 1,
