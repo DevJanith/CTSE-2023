@@ -18,6 +18,7 @@ import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
 
 const AllEvents = () => {
   const { userDetails } = useContext(AuthContext);
@@ -34,8 +35,8 @@ const AllEvents = () => {
   const getEventsData = () => {
     setLoading(true);
     let userID = userDetails._id;
-    axios
-      .get(baseURL + "/aqua-org/interested/user/" + userID)
+    aquaOrgAPI
+      .get("interested/user/" + userID)
       .then((response) => {
         setEvents(response.data);
         setLoading(false);
@@ -48,8 +49,8 @@ const AllEvents = () => {
 
   const removeEvent = () => {
     setShowDialog(false);
-    axios
-      .delete(baseURL + "/aqua-org/interested/" + deleteItemID)
+    aquaOrgAPI
+      .delete("interested/" + deleteItemID)
       .then((response) => {
         console.log(response.status);
         getEventsData();

@@ -20,6 +20,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
 
 const AddEvent = ({ navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -104,8 +105,9 @@ const AddEvent = ({ navigation }) => {
       };
 
       console.log(data);
-      axios
-        .post(baseURL + "events", data)
+
+      aquaOrgAPI
+        .post("events", data)
         .then((response) => {
           setLoading(false);
           if (response.status == 200) {

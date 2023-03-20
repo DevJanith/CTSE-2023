@@ -15,6 +15,7 @@ import { BackgroundContainer, FocusedStatusBar } from "../components";
 import axios from "axios";
 import baseURL from "../store";
 import { assets, COLORS, FONTS, SIZES } from "../constants";
+import aquaOrgAPI from "../api";
 
 const Event = ({ navigation }) => {
   const [topEvents, setTopEvents] = useState();
@@ -22,8 +23,8 @@ const Event = ({ navigation }) => {
   const data = [];
 
   const getEventsData = () => {
-    axios
-      .get(baseURL + "/aqua-org/events/")
+    aquaOrgAPI
+      .get("events/")
       .then((response) => {
         setTopEvents(response.data.data.slice(0, 5));
       })

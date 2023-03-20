@@ -20,6 +20,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
 
 const EditEvent = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -116,8 +117,8 @@ const EditEvent = ({ route, navigation }) => {
       };
 
       // console.log(data);
-      axios
-        .put(baseURL + "/aqua-org/events/" + item._id, data)
+      aquaOrgAPI
+        .put("events/" + item._id, data)
         .then((response) => {
           setLoading(false);
           if (response.status == 200) {

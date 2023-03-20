@@ -14,6 +14,7 @@ import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
 
 const AllEvents = ({ navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -26,8 +27,8 @@ const AllEvents = ({ navigation }) => {
 
   const getEventsData = () => {
     setLoading(true);
-    axios
-      .get(baseURL + "events/")
+    aquaOrgAPI
+      .get("events/")
       .then((response) => {
         setEvents(response.data.data);
         setLoading(false);
@@ -53,8 +54,8 @@ const AllEvents = ({ navigation }) => {
     };
 
     console.log(data);
-    axios
-      .post(baseURL + "/aqua-org/interested", data)
+    aquaOrgAPI
+      .post("interested", data)
       .then((response) => {
         if (response.status == 200) {
           setVisible(true);
