@@ -27,7 +27,7 @@ const AllEvents = ({ navigation }) => {
   const getEventsData = () => {
     setLoading(true);
     axios
-      .get(baseURL + "/aqua-org/events/")
+      .get(baseURL + "events/")
       .then((response) => {
         setEvents(response.data.data);
         setLoading(false);

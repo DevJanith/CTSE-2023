@@ -105,7 +105,7 @@ const AddEvent = ({ navigation }) => {
 
       console.log(data);
       axios
-        .post(baseURL + "/aqua-org/events", data)
+        .post(baseURL + "events", data)
         .then((response) => {
           setLoading(false);
           if (response.status == 200) {
