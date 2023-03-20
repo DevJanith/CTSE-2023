@@ -3,6 +3,7 @@ import Interested from "../models/interested.model.js";
 
 //add event
 export const addToInterestedEvents = async (req, res) => {
+  console.log("ADD to interested list.");
   const event = req.body;
   const newEvent = new Interested(event);
 
@@ -27,6 +28,8 @@ export const addToInterestedEvents = async (req, res) => {
 export const getInterestedEvent = async (req, res) => {
   const id = req.params.id;
 
+  console.log("GET interested events");
+
   try {
     const event = await Interested.findById(id);
 
@@ -41,6 +44,7 @@ export const getInterestedEvent = async (req, res) => {
 //delete event
 export const deleteInterestedEvent = async (req, res) => {
   const id = req.params.id;
+  console.log("DELETE events");
 
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -59,6 +63,7 @@ export const deleteInterestedEvent = async (req, res) => {
 //get interested events of user
 export const getInterestedEventsOfUser = async (req, res) => {
   const id = req.params.id;
+  console.log("GET interested events of user");
   try {
     const events = await Interested.find({ user: id });
 
