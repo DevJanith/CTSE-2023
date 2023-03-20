@@ -12,7 +12,7 @@ export const COLORS = {
   darkGreen: "#295a54",
   darkGreen2: "#84945c",
   darkGreen3: "#529990",
-  lightGreen: "#F1FFF0",
+  lightGreen: "#cdf2e0",
 
   pink: "#ff6666",
 };

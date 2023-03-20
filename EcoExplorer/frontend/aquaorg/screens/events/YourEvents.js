@@ -15,6 +15,7 @@ import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const YourEvents = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -162,7 +163,7 @@ const YourEvents = ({ route, navigation }) => {
                           }}
                           style={styles.chip}
                           mode="flat"
-                          selectedColor="#443F3F"
+                          selectedColor="white"
                           onPress={() => console.log("Pressed")}
                           key={key}
                         >
@@ -200,13 +201,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
 
