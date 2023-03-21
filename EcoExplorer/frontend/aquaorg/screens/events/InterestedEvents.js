@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   Chip,
+  Colors,
   Dialog,
   FAB,
   IconButton,
@@ -87,7 +88,7 @@ const AllEvents = () => {
           >
             <ActivityIndicator
               animating={loading}
-              color="#015C92"
+              color={Colors.green600}
               hidesWhenStopped={true}
               size="large"
             />

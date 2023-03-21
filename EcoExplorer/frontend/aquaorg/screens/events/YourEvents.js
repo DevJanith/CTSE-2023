@@ -4,6 +4,7 @@ import {
   ActivityIndicator,
   Card,
   Chip,
+  Colors,
   FAB,
   IconButton,
   Paragraph,
@@ -66,7 +67,7 @@ const YourEvents = ({ route, navigation }) => {
         >
           <ActivityIndicator
             animating={loading}
-            color="#015C92"
+            color={Colors.green600}
             hidesWhenStopped={true}
             size="large"
           />

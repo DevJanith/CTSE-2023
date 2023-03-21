@@ -2,8 +2,17 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { Button, Card, Chip, FAB, Snackbar, Title } from "react-native-paper";
+import {
+  Button,
+  Card,
+  Chip,
+  Colors,
+  FAB,
+  Snackbar,
+  Title,
+} from "react-native-paper";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
 
@@ -76,7 +85,7 @@ const ViewEvent = ({ route, navigation }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Title style={{ fontWeight: "bold", fontSize: 27 }}>
+              <Title style={{ fontWeight: "700", fontSize: 27 }}>
                 {item.name}
               </Title>
             </View>
@@ -160,7 +169,7 @@ const ViewEvent = ({ route, navigation }) => {
                   }}
                   style={styles.chip}
                   mode="flat"
-                  selectedColor="#443F3F"
+                  selectedColor={Colors.white}
                   onPress={() => console.log("Pressed")}
                   key={key}
                 >
@@ -275,17 +284,17 @@ export default ViewEvent;
 
 const styles = StyleSheet.create({
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
   submitButton: {
-    backgroundColor: "#015C92",
+    backgroundColor: Colors.green900,
     marginTop: 30,
     alignSelf: "center",
     textAlign: "center",
