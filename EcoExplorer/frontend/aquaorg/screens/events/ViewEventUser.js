@@ -19,6 +19,7 @@ import {
   Snackbar,
   Title,
 } from "react-native-paper";
+import aquaOrgAPI from "../../api";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
 
@@ -53,8 +54,8 @@ const ViewEventUser = ({ route, navigation }) => {
     };
 
     console.log(data);
-    axios
-      .delete(baseURL + "/aqua-org/events/" + item._id)
+    aquaOrgAPI
+      .delete("events/" + item._id)
       .then((response) => {
         if (response.status == 200) {
           setVisible(true);

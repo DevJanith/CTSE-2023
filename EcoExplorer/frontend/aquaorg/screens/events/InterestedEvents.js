@@ -18,6 +18,8 @@ import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const AllEvents = () => {
   const { userDetails } = useContext(AuthContext);
@@ -34,8 +36,8 @@ const AllEvents = () => {
   const getEventsData = () => {
     setLoading(true);
     let userID = userDetails._id;
-    axios
-      .get(baseURL + "/aqua-org/interested/user/" + userID)
+    aquaOrgAPI
+      .get("interested/user/" + userID)
       .then((response) => {
         setEvents(response.data);
         setLoading(false);
@@ -48,8 +50,8 @@ const AllEvents = () => {
 
   const removeEvent = () => {
     setShowDialog(false);
-    axios
-      .delete(baseURL + "/aqua-org/interested/" + deleteItemID)
+    aquaOrgAPI
+      .delete("interested/" + deleteItemID)
       .then((response) => {
         console.log(response.status);
         getEventsData();
@@ -184,7 +186,7 @@ const AllEvents = () => {
                             }}
                             style={styles.chip}
                             mode="flat"
-                            selectedColor="#443F3F"
+                            selectedColor="white"
                             onPress={() => console.log("Pressed")}
                             key={key}
                           >
@@ -247,13 +249,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
 

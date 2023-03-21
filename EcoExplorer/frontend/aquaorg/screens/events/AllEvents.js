@@ -14,6 +14,8 @@ import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
+import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const AllEvents = ({ navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -26,8 +28,8 @@ const AllEvents = ({ navigation }) => {
 
   const getEventsData = () => {
     setLoading(true);
-    axios
-      .get(baseURL + "/aqua-org/events/")
+    aquaOrgAPI
+      .get("events/")
       .then((response) => {
         setEvents(response.data.data);
         setLoading(false);
@@ -53,8 +55,8 @@ const AllEvents = ({ navigation }) => {
     };
 
     console.log(data);
-    axios
-      .post(baseURL + "/aqua-org/interested", data)
+    aquaOrgAPI
+      .post("interested", data)
       .then((response) => {
         if (response.status == 200) {
           setVisible(true);
@@ -123,7 +125,7 @@ const AllEvents = ({ navigation }) => {
                       <Title style={{ fontWeight: "bold" }}>{item.name}</Title>
 
                       <FAB
-                        icon="plus"
+                        icon="heart-outline"
                         small
                         style={styles.fab}
                         onPress={() => addToInterestedList(item)}
@@ -186,7 +188,7 @@ const AllEvents = ({ navigation }) => {
                           }}
                           style={styles.chip}
                           mode="flat"
-                          selectedColor="#443F3F"
+                          selectedColor={COLORS.white}
                           onPress={() => console.log("Pressed")}
                           key={key}
                         >
@@ -225,18 +227,18 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
 
   fab: {
-    backgroundColor: "#77BF5E",
+    backgroundColor: COLORS.pink,
   },
   snackbar: {
     flex: 1,
