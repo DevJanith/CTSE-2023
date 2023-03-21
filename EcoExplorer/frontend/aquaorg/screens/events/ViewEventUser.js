@@ -11,6 +11,7 @@ import {
   Button,
   Card,
   Chip,
+  Colors,
   Dialog,
   FAB,
   Paragraph,
@@ -20,6 +21,7 @@ import {
   Title,
 } from "react-native-paper";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
 
@@ -181,7 +183,7 @@ const ViewEventUser = ({ route, navigation }) => {
                     }}
                     style={styles.chip}
                     mode="flat"
-                    selectedColor="#443F3F"
+                    selectedColor={Colors.white}
                     onPress={() => console.log("Pressed")}
                     key={key}
                   >
@@ -321,13 +323,13 @@ export default ViewEventUser;
 
 const styles = StyleSheet.create({
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen,
     marginRight: 10,
   },
   submitButton: {

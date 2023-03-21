@@ -384,6 +384,9 @@ const styles = StyleSheet.create({
     padding: 4,
     top: 20,
     backgroundColor: COLORS.darkGreen,
+    borderWidth: 1,
+    borderColor: "white",
+    borderRadius: 20,
   },
 
   menuCard1: {
