@@ -163,7 +163,8 @@ const UpdateInfo = ({ route, navigation }) => {
                 paddingHorizontal: 20
             }}>
                 <TouchableOpacity
-                    onPress={() => { navigation.push('AddInfoHome') }}
+                    // onPress={() => { navigation.push('AddInfoHome') }}
+                    onPress={() => { navigation.push('AddInfoViewAll')}}
                     style={{
                         paddingHorizontal: 10,
                         paddingVertical: 13,
