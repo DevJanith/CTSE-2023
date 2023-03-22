@@ -71,8 +71,8 @@ const SeaAnimal = ({ onSearch, navigation }) => {
                 <View style={{ marginTop: 40 }}>
                     <SeaAnimalList
                         onPress={() => { navigation.push('BlueWhale') }}
-                        img={require('../../assets/images/Info/blue_whale.png')}
-                        title="Blue Whale"
+                        img={require('../../assets/images/EcoExplorer/orchid.png')}
+                        title="ORCHIDS"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
 
@@ -80,43 +80,43 @@ const SeaAnimal = ({ onSearch, navigation }) => {
 
                     <SeaAnimalList
 
-                        img={require('../../assets/images/Info/seahorse.png')}
-                        title="Sea Horse"
+                        img={require('../../assets/images/EcoExplorer/peace-lily.png')}
+                        title="PEACE LILY"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/turtle.png')}
-                        title="Turtle"
+                        img={require('../../assets/images/EcoExplorer/snake-plant.png')}
+                        title="SNAKE PLANT"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/shrimp.png')}
-                        title="Shrimp"
+                        img={require('../../assets/images/EcoExplorer/bromeliad.png')}
+                        title="BROMELIADS"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/jellyfish.png')}
-                        title="Jelly Fish"
+                        img={require('../../assets/images/EcoExplorer/cyclamen.png')}
+                        title="CYCLAMEN"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/crab.png')}
-                        title="Crab"
+                        img={require('../../assets/images/EcoExplorer/pothos.png')}
+                        title="DEVIL'S IVY"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/starfish.png')}
-                        title="StarFish"
+                        img={require('../../assets/images/EcoExplorer/succulents.png')}
+                        title="SUCCULENTS"
                         bg="#fbe5d8"
                         icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
