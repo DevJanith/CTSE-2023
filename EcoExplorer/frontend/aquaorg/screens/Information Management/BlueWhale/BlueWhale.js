@@ -55,7 +55,7 @@ function BlueWhale({ onSearch, navigation }) {
                     alignSelf:"center",
                     textAlign:"center",
                     marginTop:40
-                }}>Blue Whale</Text>
+                }}>ORCHIDS</Text>
 
                 <TouchableOpacity disabled={true}
                     style={{
@@ -78,7 +78,7 @@ function BlueWhale({ onSearch, navigation }) {
                                 fontSize: 12,
                                 marginLeft:5
                             }}>
-                            Sea Animal
+                            Indoor Plant
                         </Text>
                     </TouchableOpacity>
 
@@ -100,16 +100,18 @@ function BlueWhale({ onSearch, navigation }) {
                     <View style={{
                             flexDirection:"row",
                             marginHorizontal:30,
-                            marginTop:40
+                            marginTop:40,
+                            
                         }}>
                             <Image
-                                source={require('../../../assets/images/Info/author.jpg')}
+                                source={require('../../../assets/images/EcoExplorer/orchid_3.png')}
                                 style={{
                                     height:50,
                                     width:50,
-                                    borderWidth:2,
-                                    borderColor:"#f58084",
-                                    borderRadius:50,
+                                    borderWidth:1,
+                                    borderColor:"#A020F0",
+                                    borderRadius:50/2,
+                                    
                                 }}
                             />
                         <View style={{ marginHorizontal:20}}>
@@ -121,16 +123,16 @@ function BlueWhale({ onSearch, navigation }) {
                                     marginTop:2
                                 }}
                             >
-                                Mikolaj Galezioski
+                                Orchidaceae
                             </Text>
                             <Text
                             style={{
-                                color:"#f58084",
+                                color:"#A020F0",
                                 fontFamily:FONTS.medium,
                                 fontSize:13,
                                 marginBottom:15
                             }}>
-                                Scientist, Marine Vetanary Professor
+                                Scientific/Family name
                             </Text>
                         </View>
 
