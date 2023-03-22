@@ -33,7 +33,7 @@ const Chapters = ({title,num, description, percent, color, onPress, icon}) => {
                    <Text style={{
                        color:"#345c74",
                        fontFamily:FONTS.bold,
-                       fontSize:15,
+                       fontSize:16,
                        paddingLeft:20,
                        width:180,
                        marginLeft:4,
@@ -41,8 +41,8 @@ const Chapters = ({title,num, description, percent, color, onPress, icon}) => {
                        {title}
                    </Text>
                    <Text style={{
-                       color:"#f58084",
-                       fontSize:12,
+                       color:"#b30c76",
+                       fontSize:10,
                        fontFamily:FONTS.medium,
                        paddingLeft:20,
                        marginLeft:4,
@@ -55,7 +55,7 @@ const Chapters = ({title,num, description, percent, color, onPress, icon}) => {
                    fontFamily:FONTS.medium,
                    fontSize:13,
                    width:50,
-                   marginLeft:26,
+                   marginLeft:50,
                }}>
                    {percent}%
                </Text>
@@ -65,7 +65,7 @@ const Chapters = ({title,num, description, percent, color, onPress, icon}) => {
                 style={{ 
                     width: 30, 
                     height: 30,
-                    marginLeft:25,
+                    marginLeft:10,
                     marginTop:8
                 }}
             />
