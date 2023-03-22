@@ -23,7 +23,7 @@ const Introduction = () => {
     <View style={style.container}>
                <StatusBar backgroundColor="#000000"/>
                <Video
-                source={require('../../../assets/videos/Blue_Whales.mp4')}
+                source={require('../../../assets/videos/Intro_orchid.mp4')}
                 rate={1.0}
                 isMuted={false}
                 resizeMode="cover"
@@ -46,7 +46,7 @@ const Introduction = () => {
                     >
 
                     <View style={{
-                    backgroundColor:"#fde6e6",
+                    backgroundColor:"#bcd49c",
                     paddingVertical:10,
                     paddingHorizontal:18,
                     borderRadius:25,
@@ -61,7 +61,7 @@ const Introduction = () => {
                     <Text style={{
                         color:"#345c74",
                         fontFamily:FONTS.bold,
-                        fontSize:18,
+                        fontSize:20,
                         paddingLeft:20,
                         width:180,
                         marginLeft:4,
@@ -69,23 +69,23 @@ const Introduction = () => {
                         Introduction
                     </Text>
                     <Text style={{
-                        color:"#f58084",
+                        color:"#b30c76",
                         fontSize:12,
                         fontFamily:FONTS.medium,
                         paddingLeft:20,
                         marginLeft:4,
                     }}>
-                        0 hours, 02:42 minutes
+                        0 hours, 01:17 minutes
                     </Text>
                 </View>
                 <Text style={{
-                        color:"#FF0000",
-                        fontFamily:FONTS.semiBold,
+                        color:"#b30c76",
+                        fontFamily:FONTS.bold,
                         fontSize:13,
                         width:100,
-                        marginLeft:63,
+                        marginLeft:30,
                     }}>
-                        EXTINCT!
+                        NOT-EXTINCT!
                     </Text>
             </TouchableOpacity>
 
@@ -98,32 +98,37 @@ const Introduction = () => {
                    paddingLeft:42,
                    paddingRight:35
                }}>
-                   Blue whales are the largest animals ever to live on our planet. They feed almost exclusively on krill, 
-                   straining huge volumes of ocean water through their baleen plates (which hang from the roof of the 
-                   mouth and work like a sieve). Some of the biggest individuals may eat up to 6 tons of krill a day.
-                   {'\n'}Blue whales are found in all oceans except the Arctic Ocean. There are five currently recognized 
-                   subspecies of blue whales. 
-                   {'\n'}The number of blue whales today is only a small fraction of what it was before modern commercial whaling
-                   significantly reduced their numbers during the early 1900s, but populations are increasing globally. 
-                   {'\n'}The primary threats blue whales currently face are vessel strikes and entanglements in fishing gear.......
+                {'\t\t\t\t\t\t\t\t'}Orchids make up the world's most diverse plant family with the number of species estimated to be between 
+                <Text style={{fontWeight: "bold", color:"#228B22", fontSize: 14}}> 30,000 and 40,000</Text> in over 800 genera. Almost every 
+                month new species are found and documented and very often they are found to be a completely new genus.
+                {'\n'}
+                {'\n'}The largest orchid is generally agreed to be <Text style={{fontWeight: "bold", color:"#0000FF", fontSize: 14, fontStyle:"italic"}}>Grammatophyllum speciosum.</Text> 
+                It can weigh up to 2,000 pounds or 900 kilograms and is reputed to produce up to 10,000 flowers on a mature plant in nature.
+                {'\n'}
+                {'\t\t\t\t\t\t\t\t\t\t\t\t\t'}The smallest orchid is <Text style={{fontWeight: "bold", color:"#0000FF", fontSize: 14, fontStyle:"italic"}}>Platystele jungermannioides </Text>
+                which has flowers only half a millimeter or one-hundredth of an inch in diameter. The entire plant is only about a quarter of an inch or half a centimeter tall.
+                {'\n'}        
                </Text>
+
+               {/* ------- Read more button --------- */}
                <View style={{
                    flexDirection:"row",
                    paddingVertical:5,
-                   backgroundColor:"#f58084",
+                   backgroundColor:"#bcd49c",
                    marginHorizontal:95,
                    paddingVertical:15,
                    alignItems:"center",
                    borderRadius:40,
                    justifyContent:"center",
-                   marginTop:20, 
-                   width:250,
-                   elevation:6,
+                   marginTop:5, 
+                   width:180,
+                   elevation:10,
+                   marginLeft: 135
                }}>
 
                <Text
                 style={{
-                    color:"#FFF",
+                    color:"#000000",
                     fontFamily:FONTS.bold,
                     fontSize:15,
                     alignContent:"center"
@@ -131,7 +136,7 @@ const Introduction = () => {
                     Read More
                 </Text>
                 <Image
-                source={require('../../../assets/images/Info/right_arrow_2.png')}
+                source={require('../../../assets/images/EcoExplorer/right_arrow.png')}
                 style={{ 
                     width: 20, 
                     height: 20,
