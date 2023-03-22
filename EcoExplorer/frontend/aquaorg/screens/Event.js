@@ -114,12 +114,10 @@ const Event = ({ navigation }) => {
                           ellipsizeMode="tail"
                           numberOfLines={1}
                           style={{
+                            color: COLORS.darkTextColor,
                             maxWidth: 130,
                             fontFamily: "Roboto",
-                            fontWeight: "600",
-                            textShadowColor: "rgba(0, 0, 0, 0.35)",
-                            textShadowOffset: { width: -1, height: 1 },
-                            textShadowRadius: 10,
+                            fontWeight: "700",
                           }}
                         >
                           {item.name}
@@ -301,11 +299,11 @@ const Event = ({ navigation }) => {
             }}
           >
             <Image
-              source={assets.b1}
+              source={require("../assets/images/EcoExplorer/Home_bg.png")}
               resizeMode="cover"
               style={{
                 width: "100%",
-                height: 230,
+                height: 300,
                 borderBottomLeftRadius: SIZES.medium,
                 borderBottomRightRadius: SIZES.medium,
               }}
@@ -356,7 +354,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 0,
     margin: 10,
-    color: "white",
+    color: Colors.black,
   },
 
   eventCard: {
@@ -370,7 +368,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 10,
     borderRadius: 10,
-    borderColor: "white",
+    borderColor: COLORS.darkGreen,
     minHeight: 140,
   },
   topEventsContainer: {
@@ -384,6 +382,9 @@ const styles = StyleSheet.create({
     padding: 4,
     top: 20,
     backgroundColor: COLORS.darkGreen,
+    borderWidth: 1,
+    borderColor: COLORS.darkCustomColor,
+    borderRadius: 20,
   },
 
   menuCard1: {

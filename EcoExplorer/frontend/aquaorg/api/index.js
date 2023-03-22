@@ -34,7 +34,6 @@ export const getAllSeaAnimals = () => aquaOrgAPI.get(`info/`);
 export const getSeaAnimal = (id) => aquaOrgAPI.get(`info/${id}`);
 export const deleteSeaAnimal = (id) => aquaOrgAPI.delete(`info/${id}`);
 export const updateSeaAnimal = (id) => aquaOrgAPI.put(`info/${id}`);
-export const getSeaAnimalbyEmail = (email) =>
-  aquaOrgAPI.get(`info/${email}`);
+export const getSeaAnimalbyEmail = (email) => aquaOrgAPI.get(`info/${email}`);
 
 export default aquaOrgAPI;

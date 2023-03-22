@@ -2,11 +2,20 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { Button, Card, Chip, FAB, Snackbar, Title } from "react-native-paper";
+import {
+  Button,
+  Card,
+  Chip,
+  Colors,
+  FAB,
+  Snackbar,
+  Title,
+} from "react-native-paper";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
-
+import Icon from "react-native-vector-icons/FontAwesome";
 const ViewEvent = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
   const { item } = route.params;
@@ -76,7 +85,13 @@ const ViewEvent = ({ route, navigation }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Title style={{ fontWeight: "bold", fontSize: 27 }}>
+              <Title
+                style={{
+                  fontWeight: "700",
+                  fontSize: 27,
+                  color: COLORS.darkTextColor,
+                }}
+              >
                 {item.name}
               </Title>
             </View>
@@ -160,7 +175,7 @@ const ViewEvent = ({ route, navigation }) => {
                   }}
                   style={styles.chip}
                   mode="flat"
-                  selectedColor="#443F3F"
+                  selectedColor={Colors.white}
                   onPress={() => console.log("Pressed")}
                   key={key}
                 >
@@ -252,8 +267,25 @@ const ViewEvent = ({ route, navigation }) => {
           style={styles.submitButton}
           onPress={() => addToInterestedList(item)}
         >
-          <Text style={styles.btnText}> Add to Interested List</Text>
+          <Text style={styles.btnText}> Add to Interested Events</Text>
         </TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            marginLeft: 4,
+            marginTop: 10,
+          }}
+        >
+          <Icon name="info" size={20} color={COLORS.darkGreen} />
+          <Text
+            style={{
+              marginLeft: 8,
+              color: COLORS.darkGreen,
+            }}
+          >
+            You can view interested events added by youon seperate view.
+          </Text>
+        </View>
       </View>
       <Snackbar
         visible={visible}
@@ -275,17 +307,17 @@ export default ViewEvent;
 
 const styles = StyleSheet.create({
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
   },
 
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   submitButton: {
-    backgroundColor: "#015C92",
+    backgroundColor: Colors.green700,
     marginTop: 30,
     alignSelf: "center",
     textAlign: "center",
