@@ -17,10 +17,11 @@ import Chapters from '../Chapters'
 function BlueWhale({ onSearch, navigation }) {
   return (
     <ImageBackground
-                source={require('../../../assets/images/Info/blue_whale_bg.jpg')}
+                source={require('../../../assets/images/EcoExplorer/orchid_bg.png')}
                 style={{
                     width:"100%",
-                    height:"113%"
+                    height:"113%",
+                    marginBottom: 50
                 }}
             >
                 
@@ -47,20 +48,45 @@ function BlueWhale({ onSearch, navigation }) {
                     
                 </View>
 
+                <TouchableOpacity disabled={true}
+                    style={{
+                        flexDirection: "row",
+                        backgroundColor: "#000000",
+                        alignItems: "center",
+                        marginTop: 80,
+                        width: 400,
+                        height: 60,
+                        paddingVertical: 10,
+                        paddingHorizontal: 10,
+                        elevation:10,
+                        marginLeft: 15,
+                        opacity: 0.5
+                    }}
+                    >
+                        {/* <Text
+                            style={{
+                                color:COLORS.white,
+                                fontFamily:FONTS.bold,
+                                fontSize:35,
+                            }}>
+                            Indoor Plant
+                        </Text> */}
+                    </TouchableOpacity>
+
                 <Text style={{
-                    color:"#000000",
+                    color: COLORS.white,
                     fontFamily:FONTS.bold,
                     fontSize:35,
                     width:200,
                     alignSelf:"center",
                     textAlign:"center",
-                    marginTop:40
+                    marginTop:-55,
                 }}>ORCHIDS</Text>
 
                 <TouchableOpacity disabled={true}
                     style={{
                         flexDirection: "row",
-                        backgroundColor: "#015C92",
+                        backgroundColor: "#357f54",
                         alignItems: "center",
                         marginTop: 20,
                         width: 100,
@@ -85,16 +111,18 @@ function BlueWhale({ onSearch, navigation }) {
                     <Modalize 
                         handleStyle={{
                             marginTop:30,
-                            backgroundColor:"#53A7DB",
+                            backgroundColor:"#a7b28a",
                             width:80,
                             elevation:5
                         }}
                         modalStyle={{
                             borderTopLeftRadius:60,
-                            borderTopRightRadius:60
+                            borderTopRightRadius:60,
+                            backgroundColor:"#fbe5d8"
                         }}
                         alwaysOpen={580}
                         scrollViewProps={{ showsVerticalScrollIndicator:false }}
+                        backgroundColor
                     >
 
                     <View style={{
@@ -104,7 +132,7 @@ function BlueWhale({ onSearch, navigation }) {
                             
                         }}>
                             <Image
-                                source={require('../../../assets/images/EcoExplorer/orchid_3.png')}
+                                source={require('../../../assets/images/EcoExplorer/orchid_2.png')}
                                 style={{
                                     height:50,
                                     width:50,
@@ -117,9 +145,9 @@ function BlueWhale({ onSearch, navigation }) {
                         <View style={{ marginHorizontal:20}}>
                             <Text
                                 style={{
-                                    color:"345c74",
+                                    color:"#345c74",
                                     fontFamily:FONTS.bold,
-                                    fontSize:18,
+                                    fontSize:20,
                                     marginTop:2
                                 }}
                             >
@@ -129,7 +157,7 @@ function BlueWhale({ onSearch, navigation }) {
                             style={{
                                 color:"#A020F0",
                                 fontFamily:FONTS.medium,
-                                fontSize:13,
+                                fontSize:11,
                                 marginBottom:15
                             }}>
                                 Scientific/Family name
@@ -143,7 +171,7 @@ function BlueWhale({ onSearch, navigation }) {
                     <Chapters
                             onPress={() => { navigation.push('BlueWhaleIntroduction') }}
                             num={1}
-                            color="#fde6e6"
+                            color="#bcd49c"
                             percent={25}
                             description="0 hours, 02:42 minutes"
                             title="Introduction"
@@ -152,8 +180,8 @@ function BlueWhale({ onSearch, navigation }) {
                          <Chapters
                             onPress={() => { navigation.push('BlueWhaleInformation') }}
                             num={2}
-                            color="#f9e1fc"
-                            percent={50}
+                            color="#C4B454"
+                            percent={70}
                             description="Get brief explanation"
                             title="Informations"
                             icon={require('../../../assets/images/Info/right_arrow_3.png')}
@@ -161,7 +189,7 @@ function BlueWhale({ onSearch, navigation }) {
                          <Chapters
                             onPress={() => { navigation.push('BlueWhaleHologram') }}
                             num={3}
-                            color="#e8f1fd"
+                            color="#8A9A5B"
                             percent={0}
                             description="New Feature!"
                             title="Hologram"
@@ -170,8 +198,8 @@ function BlueWhale({ onSearch, navigation }) {
                          <Chapters
                             onPress={() => { navigation.push('BlueWhaleExplore') }}
                             num={4}
-                            color="#e5ffef"
-                            percent={0}
+                            color="#93C572"
+                            percent={15}
                             description="Explore some images"
                             title="Explore"
                             icon={require('../../../assets/images/Info/right_arrow_3.png')}
