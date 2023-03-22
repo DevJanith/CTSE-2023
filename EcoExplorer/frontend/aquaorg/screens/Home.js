@@ -13,7 +13,7 @@ import {
 import { Card, Paragraph, Title } from "react-native-paper";
 import { getUser } from "../api";
 import { ScreenContainer } from "../components";
-import { assets, SIZES } from "../constants";
+import { assets, COLORS, SIZES } from "../constants";
 import { AuthContext } from "../context/context";
 
 const Home = ({ navigation }) => {
@@ -95,7 +95,7 @@ const Home = ({ navigation }) => {
               }}
             >
               <Text style={[styles.heading, { marginBottom: 0 }]}>
-                Welcome Back
+                Welcome Back! 🤗
               </Text>
               <Text style={[styles.heading2, { marginTop: 0 }]}>{name}</Text>
             </View>
@@ -166,7 +166,7 @@ const Home = ({ navigation }) => {
             }}
           >
             <Image
-              source={assets.b4}
+              source={require("../assets/images/EcoExplorer/Home_bg.png")}
               resizeMode="cover"
               style={{
                 width: "100%",
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     padding: 0,
     margin: 10,
-    color: "white",
+    color: "black",
   },
 
   heading2: {
@@ -256,13 +256,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 4,
     top: 20,
-    backgroundColor: "#337DA9",
+    backgroundColor: COLORS.darkGreen,
     borderWidth: 1,
     borderColor: "white",
   },
 
   menuCard1: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
 
     margin: 10,
     width: 130,
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard2: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
     elevation: 5,
 
     margin: 10,
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard3: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
     elevation: 5,
 
     margin: 10,
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard4: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
     elevation: 5,
     margin: 10,
     width: 130,
