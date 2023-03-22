@@ -56,8 +56,8 @@ const SeaAnimalList = ({ onPress, img, title, bg, icon }) => {
             <Image
                 source={icon}
                 style={{ 
-                    width: 15, 
-                    height: 15,
+                    width: 18, 
+                    height: 18,
                     marginLeft:10
                 }}
             />
