@@ -11,7 +11,7 @@ import SeaAnimalList from './SeaAnimalList'
 const SeaAnimal = ({ onSearch, navigation }) => {
     return (
         <ImageBackground
-            source={require('../../assets/images/Info/sea_animal_bg.png')}
+            source={require('../../assets/images/EcoExplorer/plant_kingdom_bg_2.png')}
             style={{
                 width: "100%",
                 height: "100%"
@@ -30,7 +30,7 @@ const SeaAnimal = ({ onSearch, navigation }) => {
                         paddingVertical: 13,
                         borderRadius: 10,
                         marginTop: 30,
-                        backgroundColor: "#8bbcdb"
+                        backgroundColor: "#357f54"
                     }}
                 >
                     <Image
@@ -41,7 +41,7 @@ const SeaAnimal = ({ onSearch, navigation }) => {
             </View>
 
             <Text style={{
-                color: "#FFF",
+                color: "#000000",
                 fontSize: 35,
                 fontFamily: FONTS.bold,
                 width: 200,
@@ -51,13 +51,13 @@ const SeaAnimal = ({ onSearch, navigation }) => {
                 elevation: 10
 
             }}>
-                Sea Animals
+                Plant Kingdom
             </Text>
 
             <Modalize
                 handleStyle={{
                     marginTop: 30,
-                    backgroundColor: "#53A7DB",
+                    backgroundColor: "#b4cea6",
                     width: 80
                 }}
                 modalStyle={{
@@ -73,8 +73,8 @@ const SeaAnimal = ({ onSearch, navigation }) => {
                         onPress={() => { navigation.push('BlueWhale') }}
                         img={require('../../assets/images/Info/blue_whale.png')}
                         title="Blue Whale"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
 
                     />
 
@@ -82,43 +82,43 @@ const SeaAnimal = ({ onSearch, navigation }) => {
 
                         img={require('../../assets/images/Info/seahorse.png')}
                         title="Sea Horse"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
                         img={require('../../assets/images/Info/turtle.png')}
                         title="Turtle"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
                         img={require('../../assets/images/Info/shrimp.png')}
                         title="Shrimp"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
                         img={require('../../assets/images/Info/jellyfish.png')}
                         title="Jelly Fish"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
                         img={require('../../assets/images/Info/crab.png')}
                         title="Crab"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
 
                     <SeaAnimalList
                         img={require('../../assets/images/Info/starfish.png')}
                         title="StarFish"
-                        bg="#C8E7F9"
-                        icon={require('../../assets/images/Info/right_arrow_2.png')}
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/right_arrow_2.png')}
                     />
                 </View>
 

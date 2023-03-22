@@ -317,7 +317,7 @@ export default function App() {
   });
 
   const [isLoading, setIsLoading] = useState(true);
-  const [userAuth, setUserAuth] = useState(null);
+  const [userAuth, setUserAuth] = useState(true); //set null, if you want to set login page 
   const [loginSuccessData, setLoginSuccessData] = useState();
   const [loginErrorData, setLoginErrorData] = useState();
   const [loginIsSuccess, setLoginIsSuccess] = useState(false);

@@ -22,7 +22,7 @@ const Home = ({ onSearch, navigation }) => {
             }}>
             
                 <ImageBackground
-                    source={require('../../assets/images/Info/Home_bg.png')}
+                    source={require('../../assets/images/EcoExplorer/Home_bg.png')}
                     style={{ width: "100%", height: "116%" }}>
 
                     <FocusedStatusBar
@@ -34,11 +34,11 @@ const Home = ({ onSearch, navigation }) => {
 
                     <View style={{ flex: 2 }}>
                         <Text style={{
-                            color: "#FFFF00",
+                            color: "#eaab39",
                             fontFamily: FONTS.semiBold,
-                            fontSize: 15,
+                            fontSize: 25,
                             paddingHorizontal: 20,
-                            marginTop: 30,
+                            marginTop: 35,
                             marginBottom: 10
                         }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
                     </View>
@@ -79,8 +79,8 @@ const Home = ({ onSearch, navigation }) => {
                             paddingTop: 40,
                             fontFamily: FONTS.medium,
                             fontSize: 30,
-                            color: COLORS.white,
-                            marginTop: 150
+                            color: "#000000",
+                            marginTop: 240
                         }}>
                         Welcome to 👋
                     </Text>
@@ -90,9 +90,9 @@ const Home = ({ onSearch, navigation }) => {
                             paddingHorizontal: 20,
                             fontFamily: FONTS.bold,
                             fontSize: 50,
-                            color: COLORS.white
+                            color: "#000000"
                         }}>
-                        AquaOrg
+                        Eco Explorer
                     </Text>
 
                     <View
@@ -125,10 +125,13 @@ const Home = ({ onSearch, navigation }) => {
                             }}
                         />
                     </View>
+
+                    {/* ------------------ Start Learning ------------------------------------ */}
+                    
                     <View
                         style={{
                             flexDirection: "row",
-                            backgroundColor: "#BCE6FF",
+                            backgroundColor: "#357f54",
                             marginTop: 25,
                             marginHorizontal: 20,
                             borderRadius: 30,
@@ -140,7 +143,7 @@ const Home = ({ onSearch, navigation }) => {
                         <View>
                             <Text
                                 style={{
-                                    color: "#000000",
+                                    color: COLORS.white,
                                     fontFamily: FONTS.bold,
                                     fontSize: 20,
                                     width: 250,
@@ -149,18 +152,19 @@ const Home = ({ onSearch, navigation }) => {
                             >Start Learning</Text>
                             <Text
                                 style={{
-                                    color: "#000000",
+                                    color: COLORS.white,
                                     fontFamily: FONTS.bold,
                                     fontSize: 25,
-                                    width: 250
+                                    width: 250,
+                                    marginTop: 3,
                                 }}
-                            >Life Below Water!</Text>
+                            >Life of Plants!</Text>
 
                             <TouchableOpacity
                                 onPress={() => { navigation.push('InfoCategories') }} 
                                 style={{
                                     flexDirection: "row",
-                                    backgroundColor: "#015C92",
+                                    backgroundColor: "#81B622",
                                     alignItems: "center",
                                     marginTop: 20,
                                     width: 150,
@@ -171,14 +175,14 @@ const Home = ({ onSearch, navigation }) => {
                             >
                                 <Text
                                     style={{
-                                        color: "#FFF",
+                                        color: "#000000",
                                         fontFamily: FONTS.bold,
-                                        fontSize: 12
+                                        fontSize: 14
                                     }}>
                                     Categories
                                 </Text>
                                 <Image
-                                    source={require('../../assets/images/Info/right_arrow.png')}
+                                    source={require('../../assets/images/EcoExplorer/right_arrow.png')}
                                     style={{
                                         marginLeft: 35,
                                         width: 15,
@@ -189,18 +193,20 @@ const Home = ({ onSearch, navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <Image
-                            source={require('../../assets/images/Info/undraw.png')}
+                            source={require('../../assets/images/EcoExplorer/plant-2.png')}
                             style={{
-                                marginLeft: -50,
-                                marginTop: 70
+                                marginLeft: -30,
+                                marginTop: -5
                             }}
                         />
                     </View>
 
+                    {/* ------------------ Featured Categories ------------------------------------ */}
+
                     <View style={{ flexDirection: "row" }}>
                     <View style={{ flex: 2 }}>
                         <Text style={{
-                            color: "#345c74",
+                            color: "#000000",
                             fontFamily: FONTS.bold,
                             fontSize: 22,
                             paddingHorizontal: 20,
@@ -212,7 +218,7 @@ const Home = ({ onSearch, navigation }) => {
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity
                             style={{
-                                backgroundColor: "#53A7DB",
+                                backgroundColor: "#81B622",
                                 alignItems: "center",
                                 width: 80,
                                 paddingVertical: 5,
@@ -228,7 +234,7 @@ const Home = ({ onSearch, navigation }) => {
                                 <Text style={{
                                     fontFamily: FONTS.medium,
                                     fontSize: SIZES.small,
-                                    color: COLORS.white,
+                                    color: "#000000",
                                 }}>
                                 More
                                 </Text>
@@ -239,31 +245,31 @@ const Home = ({ onSearch, navigation }) => {
 
                     <SeaAnimalList
                         onPress={() => { navigation.push('BlueWhale') }}
-                        img={require('../../assets/images/Info/blue_whale.png')}
-                        title="Blue Whale"
-                        bg="#BCE6FF"
-                        icon={require('../../assets/images/Info/play.png')}
+                        img={require('../../assets/images/EcoExplorer/orchid.png')}
+                        title="ORCHIDS"
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/play.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/seahorse.png')}
-                        title="Sea Horse"
-                        bg="#BCE6FF"
-                        icon={require('../../assets/images/Info/play.png')}
+                        img={require('../../assets/images/EcoExplorer/peace-lily.png')}
+                        title="PEACE LILY"
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/play.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/turtle.png')}
-                        title="Turtle"
-                        bg="#BCE6FF"
-                        icon={require('../../assets/images/Info/play.png')}
+                        img={require('../../assets/images/EcoExplorer/snake-plant.png')}
+                        title="SNAKE PLANT"
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/play.png')}
                     />
 
                     <SeaAnimalList
-                        img={require('../../assets/images/Info/shrimp.png')}
-                        title="Shrimp"
-                        bg="#BCE6FF"
-                        icon={require('../../assets/images/Info/play.png')}
+                        img={require('../../assets/images/EcoExplorer/bromeliad.png')}
+                        title="BROMELIADS"
+                        bg="#fbe5d8"
+                        icon={require('../../assets/images/EcoExplorer/play.png')}
                     />
 
                     {/* ------------------ Wanna Add Information ------------------------------------ */}
@@ -271,7 +277,7 @@ const Home = ({ onSearch, navigation }) => {
                     <View
                         style={{
                             flexDirection: "row",
-                            backgroundColor: "#C8E7F9",
+                            backgroundColor: "#b4cea6",
                             marginTop: 25,
                             marginHorizontal: 20,
                             borderRadius: 30,
@@ -311,7 +317,7 @@ const Home = ({ onSearch, navigation }) => {
 
                             <Text
                                 style={{
-                                    color: "#AEAEAE",
+                                    color: "#84945c",
                                     fontFamily: FONTS.medium,
                                     fontSize: 13,
                                     width: 250,
@@ -327,7 +333,7 @@ const Home = ({ onSearch, navigation }) => {
                                 onPress={() => { navigation.push('AddInfoHome') }}
                                 style={{
                                     flexDirection: "row",
-                                    backgroundColor: "#015C92",
+                                    backgroundColor: "#357f54",
                                     alignItems: "center",
                                     marginTop: 20,
                                     marginLeft: 240,
@@ -350,7 +356,7 @@ const Home = ({ onSearch, navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <Image
-                            source={require('../../assets/images/Info/question.png')}
+                            source={require('../../assets/images/EcoExplorer/question-mark.png')}
                             style={{
                                 width:100,
                                 height:100,
