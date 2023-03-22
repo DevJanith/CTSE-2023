@@ -10,11 +10,19 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { FlatList, TextInput } from "react-native-gesture-handler";
-import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
+import {
+  Avatar,
+  Button,
+  Card,
+  Title,
+  Paragraph,
+  Colors,
+} from "react-native-paper";
 import { BackgroundContainer, FocusedStatusBar } from "../components";
 import axios from "axios";
 import baseURL from "../store";
 import { assets, COLORS, FONTS, SIZES } from "../constants";
+import aquaOrgAPI from "../api";
 
 const Event = ({ navigation }) => {
   const [topEvents, setTopEvents] = useState();
@@ -22,8 +30,8 @@ const Event = ({ navigation }) => {
   const data = [];
 
   const getEventsData = () => {
-    axios
-      .get(baseURL + "/aqua-org/events/")
+    aquaOrgAPI
+      .get("events/")
       .then((response) => {
         setTopEvents(response.data.data.slice(0, 5));
       })
@@ -107,6 +115,11 @@ const Event = ({ navigation }) => {
                           numberOfLines={1}
                           style={{
                             maxWidth: 130,
+                            fontFamily: "Roboto",
+                            fontWeight: "600",
+                            textShadowColor: "rgba(0, 0, 0, 0.35)",
+                            textShadowOffset: { width: -1, height: 1 },
+                            textShadowRadius: 10,
                           }}
                         >
                           {item.name}
@@ -115,6 +128,7 @@ const Event = ({ navigation }) => {
                           ellipsizeMode="tail"
                           numberOfLines={1}
                           style={{
+                            fontFamily: "Roboto",
                             maxWidth: 130,
                           }}
                         >
@@ -122,6 +136,7 @@ const Event = ({ navigation }) => {
                             ellipsizeMode="tail"
                             numberOfLines={1}
                             style={{
+                              fontFamily: "Roboto",
                               fontWeight: "bold",
                             }}
                           >
@@ -145,7 +160,7 @@ const Event = ({ navigation }) => {
                 <Card
                   style={[
                     styles.questionCard,
-                    { top: 15, backgroundColor: "#015C92", height: 100 },
+                    { top: 15, backgroundColor: COLORS.darkGreen, height: 100 },
                   ]}
                   elevation={5}
                   onPress={() => {
@@ -348,8 +363,8 @@ const styles = StyleSheet.create({
     height: 100,
     width: 175,
     margin: 10,
-    backgroundColor: "#BCE6FF",
-    borderRadius: 20,
+    backgroundColor: COLORS.lightGreen,
+    borderRadius: 10,
   },
   topList: {
     borderWidth: 2,
@@ -368,11 +383,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 4,
     top: 20,
-    backgroundColor: "#337DA9",
+    backgroundColor: COLORS.darkGreen,
   },
 
   menuCard1: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
 
     margin: 10,
     width: 130,
@@ -385,7 +400,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard2: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
 
     margin: 10,
     width: 130,
@@ -398,7 +413,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard3: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
 
     margin: 10,
     width: 130,
@@ -410,7 +425,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   menuCard4: {
-    backgroundColor: "#0c78b9",
+    backgroundColor: COLORS.darkGreen3,
     margin: 10,
     width: 130,
     height: 100,

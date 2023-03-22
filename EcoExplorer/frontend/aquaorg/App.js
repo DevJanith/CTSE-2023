@@ -37,10 +37,21 @@ import ViewEventUser from "./screens/events/ViewEventUser";
 import EditEvent from "./screens/events/EditEvent";
 import EventInfo from "./screens/events/EventInfo";
 
-import { QuickAnswer, QuickQAEnd, QuickQAHome, QuickQuestion } from "./screens/questionAndAnswers/quickQA";
-import { Previous, PreviousQAHome } from "./screens/questionAndAnswers/previousQA";
-import { ScoreBoard, ScoreBoardQAHome } from "./screens/questionAndAnswers/scoreBoardQA";
-import { login, registration } from "./api";
+import {
+  QuickAnswer,
+  QuickQAEnd,
+  QuickQAHome,
+  QuickQuestion,
+} from "./screens/questionAndAnswers/quickQA";
+import {
+  Previous,
+  PreviousQAHome,
+} from "./screens/questionAndAnswers/previousQA";
+import {
+  ScoreBoard,
+  ScoreBoardQAHome,
+} from "./screens/questionAndAnswers/scoreBoardQA";
+import { login } from "./api";
 
 import InfoHome from "./screens/Information Management/Home";
 import InfoCategories from "./screens/Information Management/Categories";
@@ -58,12 +69,10 @@ import AddInfoViewEach from "./screens/Information Management/UserAddInfo/ViewEa
 import AddInfoUpdate from "./screens/Information Management/UserAddInfo/UpdateInfo";
 import LogOut from "./screens/auth/LogOut";
 
-
 import AddDonation from "./screens/DonationManagement/AddDonation";
 import RecurringDonation from "./screens/DonationManagement/RecurringDonation";
 import OneTimeDonation from "./screens/DonationManagement/OneTimeDonation";
 import AddDetails from "./screens/DonationManagement/AddDetails";
-
 
 //internal styling
 const theme = {
@@ -142,53 +151,161 @@ const EventScreens = () => (
 );
 
 const QuestionAnswerScreens = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="QuestionAndAnswersSrc">
-    <Stack.Screen name="QuestionAndAnswersSrc" component={QuestionAndAnswers} options={{ headerShown: false }} />
-    <Stack.Screen name="QuickQAHome" component={QuickQAHome} options={{ title: "Quick Q & A" }} />
-    <Stack.Screen name="QuickQuestion" component={QuickQuestion} options={{ title: "Quick Question" }} />
-    <Stack.Screen name="QuickQAEnd" component={QuickQAEnd} options={{ title: "Quick Q & A End" }} />
-    <Stack.Screen name="QuickAnswer" component={QuickAnswer} options={{ title: "Quick Answer" }} />
-    <Stack.Screen name="PreviousQAHome" component={PreviousQAHome} options={{ title: "Previous Q & A" }} />
-    <Stack.Screen name="Previous" component={Previous} options={{ title: "Previous" }} />
-    <Stack.Screen name="ScoreBoardQAHome" component={ScoreBoardQAHome} options={{ title: "Scoreboard Q & A" }} />
-    <Stack.Screen name="ScoreBoard" component={ScoreBoard} options={{ title: "Scoreboard" }} />
+  <Stack.Navigator
+    screenOptions={{ headerShown: false }}
+    initialRouteName="QuestionAndAnswersSrc"
+  >
+    <Stack.Screen
+      name="QuestionAndAnswersSrc"
+      component={QuestionAndAnswers}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="QuickQAHome"
+      component={QuickQAHome}
+      options={{ title: "Quick Q & A" }}
+    />
+    <Stack.Screen
+      name="QuickQuestion"
+      component={QuickQuestion}
+      options={{ title: "Quick Question" }}
+    />
+    <Stack.Screen
+      name="QuickQAEnd"
+      component={QuickQAEnd}
+      options={{ title: "Quick Q & A End" }}
+    />
+    <Stack.Screen
+      name="QuickAnswer"
+      component={QuickAnswer}
+      options={{ title: "Quick Answer" }}
+    />
+    <Stack.Screen
+      name="PreviousQAHome"
+      component={PreviousQAHome}
+      options={{ title: "Previous Q & A" }}
+    />
+    <Stack.Screen
+      name="Previous"
+      component={Previous}
+      options={{ title: "Previous" }}
+    />
+    <Stack.Screen
+      name="ScoreBoardQAHome"
+      component={ScoreBoardQAHome}
+      options={{ title: "Scoreboard Q & A" }}
+    />
+    <Stack.Screen
+      name="ScoreBoard"
+      component={ScoreBoard}
+      options={{ title: "Scoreboard" }}
+    />
   </Stack.Navigator>
 );
 
 const InformationScreens = () => (
   <Stack.Navigator initialRouteName="InformationSrc">
     {/* <Stack.Screen name="InformationSrc" component={Info} options={{ headerShown: false }} /> */}
-    <Stack.Screen name="InformationSrc" component={InfoHome} options={{ headerShown: false }} />
-    <Stack.Screen name="InfoCategories" component={InfoCategories} options={{ title: "Categories" }} />
-    <Stack.Screen name="InfoSeaAnimal" component={InfoSeaAnimal} options={{ headerShown: false }} />
-    <Stack.Screen name="BlueWhale" component={BlueWhale} options={{ headerShown: false }} />
-    <Stack.Screen name="BlueWhaleIntroduction" component={BlueWhaleIntroduction} options={{ title: "Introduction" }} />
-    <Stack.Screen name="BlueWhaleInformation" component={BlueWhaleInformation} options={{ title: "Information" }} />
-    <Stack.Screen name="BlueWhaleHologram" component={BlueWhaleHologram} options={{ title: "Hologram" }} />
-    <Stack.Screen name="BlueWhaleExplore" component={BlueWhaleExplore} options={{ title: "Explore" }} />
+    <Stack.Screen
+      name="InformationSrc"
+      component={InfoHome}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="InfoCategories"
+      component={InfoCategories}
+      options={{ title: "Categories" }}
+    />
+    <Stack.Screen
+      name="InfoSeaAnimal"
+      component={InfoSeaAnimal}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="BlueWhale"
+      component={BlueWhale}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="BlueWhaleIntroduction"
+      component={BlueWhaleIntroduction}
+      options={{ title: "Introduction" }}
+    />
+    <Stack.Screen
+      name="BlueWhaleInformation"
+      component={BlueWhaleInformation}
+      options={{ title: "Information" }}
+    />
+    <Stack.Screen
+      name="BlueWhaleHologram"
+      component={BlueWhaleHologram}
+      options={{ title: "Hologram" }}
+    />
+    <Stack.Screen
+      name="BlueWhaleExplore"
+      component={BlueWhaleExplore}
+      options={{ title: "Explore" }}
+    />
 
     {/* Add Information */}
-    <Stack.Screen name="AddInfoHome" component={AddInfoHome} options={{ headerShown: false }} />
-    <Stack.Screen name="AddInfoCreate" component={AddInfoCreate} options={{ headerShown: false }} />
-    <Stack.Screen name="AddInfoViewAll" component={AddInfoViewAll} options={{ title: "Added Information" }} />
-    <Stack.Screen name="AddInfoViewEach" component={AddInfoViewEach} options={{ title: "Added Each Information" }} />
-    <Stack.Screen name="AddInfoUpdate" component={AddInfoUpdate} options={{ title: "Update Information" }} />
-
-
+    <Stack.Screen
+      name="AddInfoHome"
+      component={AddInfoHome}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="AddInfoCreate"
+      component={AddInfoCreate}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="AddInfoViewAll"
+      component={AddInfoViewAll}
+      options={{ title: "Added Information" }}
+    />
+    <Stack.Screen
+      name="AddInfoViewEach"
+      component={AddInfoViewEach}
+      options={{ title: "Added Each Information" }}
+    />
+    <Stack.Screen
+      name="AddInfoUpdate"
+      component={AddInfoUpdate}
+      options={{ title: "Update Information" }}
+    />
   </Stack.Navigator>
-)
+);
 
 const DonationScreens = () => (
   <Stack.Navigator initialRouteName="DonationSrc">
     {/* <Stack.Screen name="InformationSrc" component={Info} options={{ headerShown: false }} /> */}
-    <Stack.Screen name="DonationSrc" component={Donation} options={{ headerShown: false }} />
-    <Stack.Screen name="AddDonation" component={AddDonation} options={{ title: "Donation Methods" }} />
-    <Stack.Screen name="RecurringDonation" component={RecurringDonation} options={{ title: "Recurring Donations" }} />
-    <Stack.Screen name="OneTimeDonation" component={OneTimeDonation} options={{ title: "One Time Donations" }} />
-    <Stack.Screen name="AddDetails" component={AddDetails} options={{ title: "Enter the Details" }} />
-
+    <Stack.Screen
+      name="DonationSrc"
+      component={Donation}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="AddDonation"
+      component={AddDonation}
+      options={{ title: "Donation Methods" }}
+    />
+    <Stack.Screen
+      name="RecurringDonation"
+      component={RecurringDonation}
+      options={{ title: "Recurring Donations" }}
+    />
+    <Stack.Screen
+      name="OneTimeDonation"
+      component={OneTimeDonation}
+      options={{ title: "One Time Donations" }}
+    />
+    <Stack.Screen
+      name="AddDetails"
+      component={AddDetails}
+      options={{ title: "Enter the Details" }}
+    />
   </Stack.Navigator>
-)
+);
 
 export default function App() {
   const [loaded] = useFonts({
@@ -200,18 +317,12 @@ export default function App() {
   });
 
   const [isLoading, setIsLoading] = useState(true);
-  const [userAuth, setUserAuth] = useState(null);
+  const [userAuth, setUserAuth] = useState(true); //set null, if you want to set login page 
   const [loginSuccessData, setLoginSuccessData] = useState();
   const [loginErrorData, setLoginErrorData] = useState();
   const [loginIsSuccess, setLoginIsSuccess] = useState(false);
   const [loginsIsPending, setLoginIsPending] = useState(false);
   const [loginIsError, setLoginIsError] = useState(false);
-
-  const [registrationSuccessData, setRegistrationSuccessData] = useState();
-  const [registrationErrorData, setRegistrationErrorData] = useState();
-  const [registrationIsSuccess, setRegistrationIsSuccess] = useState(false);
-  const [registrationsIsPending, setRegistrationIsPending] = useState(false);
-  const [registrationIsError, setRegistrationIsError] = useState(false);
 
   const authContext = useMemo(() => {
     return {
@@ -237,34 +348,15 @@ export default function App() {
             alert("login Fail");
           });
       },
-      register: (data) => {
-        console.log(data);
-        setIsLoading(true);
-        setRegistrationIsPending(true);
-        registration(data)
-          .then((response) => {
-            console.log(response.data.result);
-            setRegistrationSuccessData(response.data.result);
-            setUserAuth(response.data.token);
-            setIsLoading(false);
-            setRegistrationIsPending(false);
-            setRegistrationIsSuccess(true);
-            alert("Registration Success");
-          })
-          .catch((err) => {
-            console.log(err);
-            setRegistrationErrorData(err.response);
-            setIsLoading(false);
-            setRegistrationIsPending(false);
-            setRegistrationIsError(true);
-            alert("Registration Fail");
-          });
+      register: () => {
+        setIsLoading(false);
+        setUserAuth("1234");
       },
       logout: () => {
         setIsLoading(false);
         setUserAuth(null);
       },
-      userDetails: loginSuccessData
+      userDetails: loginSuccessData,
     };
   }, [loginSuccessData]);
 
@@ -273,10 +365,6 @@ export default function App() {
       setIsLoading(false);
     }, 1000);
   }, []);
-
-  if (isLoading) {
-    return <Splash />;
-  }
 
   if (isLoading) {
     return <Splash />;
@@ -313,9 +401,9 @@ export default function App() {
                   routeName == "AddInfoViewEach" ||
                   routeName == "AddInfoUpdate"
                 )
-                  return { headerShown: false }
+                  return { headerShown: false };
 
-                return { title: "Information" }
+                return { title: "Information" };
               }}
             />
             <Drawer.Screen
@@ -362,6 +450,7 @@ export default function App() {
                   return { headerShown: false };
               }}
             />
+
             <Drawer.Screen
               name="Donation"
               component={DonationScreens}
@@ -376,18 +465,24 @@ export default function App() {
                   routeName == "RecurringDonation" ||
                   routeName == "OneTimeDonation" ||
                   routeName == "AddDetails"
-
-
                 )
                   return { headerShown: false };
-                return { title: "Donation Page" }
+                return { title: "Donation Page" };
               }}
             />
 
             {/* <Drawer.Screen name="Donation" component={Donation} /> */}
             {/* <Drawer.Screen name="Donation" component={Donation} /> */}
-            <Drawer.Screen name="Profile" component={Profile} options={{ title: "User Profile" }} />
-            <Drawer.Screen name="LogOut" component={LogOut} options={{ title: "Log Out" }} />
+            <Drawer.Screen
+              name="Profile"
+              component={Profile}
+              options={{ title: "User Profile" }}
+            />
+            <Drawer.Screen
+              name="LogOut"
+              component={LogOut}
+              options={{ title: "Log Out" }}
+            />
           </Drawer.Navigator>
         ) : (
           <Stack.Navigator

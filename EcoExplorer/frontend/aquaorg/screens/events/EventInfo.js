@@ -136,8 +136,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: COLORS.lightGreen,
     marginVertical: 10,
     borderRadius: 23,
+    marginHorizontal: 10,
   },
 });

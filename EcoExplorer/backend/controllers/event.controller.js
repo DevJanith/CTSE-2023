@@ -7,6 +7,7 @@ export const createEvent = async (req, res) => {
   const newEvent = new Event(event);
 
   try {
+    console.log("POST : create new event");
     await newEvent.save();
 
     res.json({
@@ -28,6 +29,7 @@ export const getEvent = async (req, res) => {
   const id = req.params.id;
 
   try {
+    console.log("GET one events");
     const event = await Event.findById(id);
 
     res.status(200);
@@ -43,6 +45,7 @@ export const deleteEvent = async (req, res) => {
   const id = req.params.id;
 
   try {
+    console.log("DELETE event ", id);
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).send(`No Event with id: ${id}`);
     }
@@ -60,6 +63,7 @@ export const deleteEvent = async (req, res) => {
 
 export const getAllEvents = async (req, res) => {
   try {
+    console.log("GET all events");
     const events = await Event.find();
 
     res.status(200);
@@ -81,6 +85,8 @@ export const getAllEvents = async (req, res) => {
 export const getUserEvents = async (req, res) => {
   const id = req.params.id;
   try {
+    console.log("GET events of user.");
+
     const events = await Event.find({ user: id });
 
     res.status(200);
@@ -93,6 +99,7 @@ export const getUserEvents = async (req, res) => {
 
 //update
 export const updateEvent = async (req, res) => {
+  console.log("UPDATE event");
   const { id } = req.params;
   const { user, name, organizer, date, description, tags } = req.body;
 
@@ -121,6 +128,7 @@ export const updateEvent = async (req, res) => {
 
 //add memeber
 export const addMember = async (req, res) => {
+  console.log("Add member");
   const { id } = req.params;
   const { member } = req.body;
   console.log(member);
@@ -152,6 +160,7 @@ export const addMember = async (req, res) => {
 
 //add partocopant
 export const addParticipant = async (req, res) => {
+  console.log("Add participants");
   const { id } = req.params;
   const { participant } = req.body;
 

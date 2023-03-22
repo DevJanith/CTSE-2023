@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Button, Card, Chip, FAB, Snackbar, Title } from "react-native-paper";
+import aquaOrgAPI from "../../api";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
 
@@ -32,8 +33,8 @@ const ViewEvent = ({ route, navigation }) => {
     };
 
     console.log(data);
-    axios
-      .post(baseURL + "/aqua-org/interested", data)
+    aquaOrgAPI
+      .post("interested", data)
       .then((response) => {
         setLoading(false);
         if (response.status == 200) {
