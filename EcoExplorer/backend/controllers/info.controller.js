@@ -112,11 +112,11 @@ export const updateInfo = async (req, res) => {
 //get Info Details According to the logged user email
 
 export const getInfoByEmail = async (req, res, next) => {
-  const { email } = req.params;
+  const { email } = req.params; 
   try {
-    const Info = await Info.find({ email: email });
+    const InfoData = await Info.find({ email: email });
 
-    res.status(200).json({ code: "01", result: Info })
+    res.status(200).json({ code: "01", result: InfoData })
   } catch (e) {
     console.log(e.message);
     res.status(500).json({ code: "00", message: "Something went wrong" })
