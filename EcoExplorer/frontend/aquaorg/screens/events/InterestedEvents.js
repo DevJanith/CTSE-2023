@@ -118,7 +118,12 @@ const AllEvents = () => {
                           justifyContent: "space-between",
                         }}
                       >
-                        <Title style={{ fontWeight: "bold" }}>
+                        <Title
+                          style={{
+                            fontWeight: "bold",
+                            color: COLORS.darkTextColor,
+                          }}
+                        >
                           {item.name}
                         </Title>
 
@@ -256,7 +261,7 @@ const styles = StyleSheet.create({
   },
 
   chip: {
-    backgroundColor: COLORS.darkGreen,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
 

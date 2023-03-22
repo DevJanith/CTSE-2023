@@ -123,7 +123,14 @@ const AllEvents = ({ navigation }) => {
                         justifyContent: "space-between",
                       }}
                     >
-                      <Title style={{ fontWeight: "bold" }}>{item.name}</Title>
+                      <Title
+                        style={{
+                          fontWeight: "bold",
+                          color: COLORS.darkTextColor,
+                        }}
+                      >
+                        {item.name}
+                      </Title>
 
                       <FAB
                         icon="heart-outline"
@@ -234,7 +241,7 @@ const styles = StyleSheet.create({
   },
 
   chip: {
-    backgroundColor: COLORS.darkGreen,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
 

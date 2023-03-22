@@ -15,7 +15,7 @@ import aquaOrgAPI from "../../api";
 import { COLORS } from "../../constants";
 import { AuthContext } from "../../context/context";
 import baseURL from "../../store";
-
+import Icon from "react-native-vector-icons/FontAwesome";
 const ViewEvent = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
   const { item } = route.params;
@@ -85,7 +85,13 @@ const ViewEvent = ({ route, navigation }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Title style={{ fontWeight: "700", fontSize: 27 }}>
+              <Title
+                style={{
+                  fontWeight: "700",
+                  fontSize: 27,
+                  color: COLORS.darkTextColor,
+                }}
+              >
                 {item.name}
               </Title>
             </View>
@@ -261,8 +267,25 @@ const ViewEvent = ({ route, navigation }) => {
           style={styles.submitButton}
           onPress={() => addToInterestedList(item)}
         >
-          <Text style={styles.btnText}> Add to Interested List</Text>
+          <Text style={styles.btnText}> Add to Interested Events</Text>
         </TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            marginLeft: 4,
+            marginTop: 10,
+          }}
+        >
+          <Icon name="info" size={20} color={COLORS.darkGreen} />
+          <Text
+            style={{
+              marginLeft: 8,
+              color: COLORS.darkGreen,
+            }}
+          >
+            You can view interested events added by youon seperate view.
+          </Text>
+        </View>
       </View>
       <Snackbar
         visible={visible}
@@ -290,11 +313,11 @@ const styles = StyleSheet.create({
   },
 
   chip: {
-    backgroundColor: COLORS.darkGreen,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   submitButton: {
-    backgroundColor: Colors.green900,
+    backgroundColor: Colors.green700,
     marginTop: 30,
     alignSelf: "center",
     textAlign: "center",

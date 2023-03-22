@@ -407,7 +407,7 @@ const styles = StyleSheet.create({
     backgroundColor: "",
   },
   chip: {
-    backgroundColor: Colors.green400,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   btnText: {

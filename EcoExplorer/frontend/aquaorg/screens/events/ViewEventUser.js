@@ -92,7 +92,13 @@ const ViewEventUser = ({ route, navigation }) => {
                   justifyContent: "space-between",
                 }}
               >
-                <Title style={{ fontWeight: "bold", fontSize: 27 }}>
+                <Title
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 27,
+                    color: COLORS.darkTextColor,
+                  }}
+                >
                   {item.name}
                 </Title>
                 <FAB
@@ -329,7 +335,7 @@ const styles = StyleSheet.create({
   },
 
   chip: {
-    backgroundColor: COLORS.darkGreen,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   submitButton: {
