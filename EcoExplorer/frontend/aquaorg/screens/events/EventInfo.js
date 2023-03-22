@@ -28,7 +28,7 @@ const EventInfo = ({ navigation }) => {
         <ScrollView>
           <View style={{ flex: 1 }}>
             <ImageBackground
-              source={assets.b3}
+              source={require("../../assets/images/EcoExplorer/Home_bg.png")}
               resizeMode="cover"
               style={styles.image}
             >
