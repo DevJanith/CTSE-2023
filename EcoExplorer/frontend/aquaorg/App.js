@@ -204,7 +204,15 @@ const QuestionAnswerScreens = () => (
 );
 
 const InformationScreens = () => (
-  <Stack.Navigator initialRouteName="InformationSrc">
+  <Stack.Navigator 
+    initialRouteName="InformationSrc"
+    screenOptions={{
+      headerMode: 'screen',
+      headerTintColor: 'black',
+      headerStyle: { backgroundColor: '#d9ddbf' },
+    }}
+
+  >
     {/* <Stack.Screen name="InformationSrc" component={Info} options={{ headerShown: false }} /> */}
     <Stack.Screen
       name="InformationSrc"
@@ -261,12 +269,12 @@ const InformationScreens = () => (
     <Stack.Screen
       name="AddInfoViewAll"
       component={AddInfoViewAll}
-      options={{ title: "Added Information" }}
+      options={{ title: "Info" }}
     />
     <Stack.Screen
       name="AddInfoViewEach"
       component={AddInfoViewEach}
-      options={{ title: "Added Each Information" }}
+      options={{ title: "Info" }}
     />
     <Stack.Screen
       name="AddInfoUpdate"

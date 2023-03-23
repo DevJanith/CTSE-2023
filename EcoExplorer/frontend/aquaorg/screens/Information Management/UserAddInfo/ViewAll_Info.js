@@ -134,7 +134,7 @@ const ViewAll_Info = ({ route, navigation }) => {
                 backgroundColor: "#357f54",
                 alignItems: "center",
                 marginTop: 40,
-                width: 110,
+                width: 115,
                 paddingVertical: 10,
                 borderRadius: 14,
                 paddingHorizontal: 10,
@@ -151,7 +151,7 @@ const ViewAll_Info = ({ route, navigation }) => {
                   marginLeft: 5,
                   
                 }}>
-                Indoor Plant
+                Indoor Plants
               </Text>
             </TouchableOpacity>
 
