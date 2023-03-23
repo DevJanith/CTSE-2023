@@ -39,7 +39,11 @@ const Home = ({ onSearch, navigation }) => {
                             fontSize: 25,
                             paddingHorizontal: 20,
                             marginTop: 35,
-                            marginBottom: 10
+                            marginBottom: 10,
+                            textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                            textShadowOffset: { width: -1, height: 1 },
+                            textShadowRadius: 6
+                            
                         }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
                     </View>
 

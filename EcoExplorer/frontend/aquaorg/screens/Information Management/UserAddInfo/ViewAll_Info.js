@@ -24,8 +24,9 @@ import { deleteSeaAnimal, getAllSeaAnimals } from '../../../api/index';
 import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../../store";
-import { FONTS } from "../../../constants";
+import {  COLORS, FONTS, SIZES } from "../../../constants";
 import { AuthContext } from "../../../context/context";
+import FocusedStatusBar from '../../../components/FocusedStatusBar';
 
 const ViewAll_Info = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -70,15 +71,27 @@ const ViewAll_Info = ({ route, navigation }) => {
   }, [route.params]);
 
   return (
-    <SafeAreaView>
-      {loading ?
-        (
-          <View
+    <SafeAreaView
+      style={{
+        flex: 1
+      }}>
+
+      <ImageBackground
+          source={require('../../../assets/images/EcoExplorer/view_all_bg_2.png')}
+          style={{ width: "100%", height: "100%" }}>
+
+          <FocusedStatusBar
+            background={COLORS.primary}
+          />
+      {/* <ScrollView> */}
+      {/* {loading ?
+        ( */}
+          {/* <View
             style={{
               justifyContent: "center", //Centered horizontally
               alignItems: "center", //Centered vertically
               flex: 1,
-              marginTop: "60%",
+              marginTop: -10,
             }}
           >
             <ActivityIndicator
@@ -87,33 +100,47 @@ const ViewAll_Info = ({ route, navigation }) => {
               hidesWhenStopped={true}
               size="large"
             />
-          </View>
-        ) : (
+          </View> */}
+        {/* ) : ( */}
 
           <View style={styles.listContainer}>
 
             <Text style={{
               color: "#000000",
               fontFamily: FONTS.bold,
-              fontSize: 25,
-              width: 200,
+              fontSize: 35,
+              width: 300,
               alignSelf: "center",
               textAlign: "center",
-            }}>Life Below Water</Text>
+              marginTop:50,
+              textShadowColor: 'rgba(0, 0, 0, 0.75)',
+              textShadowOffset: { width: -1, height: 1 },
+              textShadowRadius: 2
+            }}>Life of Plants!</Text>
+
+            <Text style={{
+              color: "#000000",
+              fontFamily: FONTS.medium,
+              fontSize: 15,
+              width: 500,
+              alignSelf: "center",
+              textAlign: "center",
+              marginTop:10,
+            }}>━━━━━━━ View All your added Informations ━━━━━━━</Text>
 
             <TouchableOpacity disabled={true}
               style={{
                 flexDirection: "row",
-                backgroundColor: "#015C92",
+                backgroundColor: "#357f54",
                 alignItems: "center",
-                marginTop: 10,
-                width: 105,
+                marginTop: 40,
+                width: 110,
                 paddingVertical: 10,
-                borderRadius: 50,
+                borderRadius: 14,
                 paddingHorizontal: 10,
-                marginLeft: 145,
-                marginBottom: 20,
-                elevation: 10
+                marginLeft:140,
+                elevation:10,
+                marginBottom: 30
               }}
             >
               <Text
@@ -121,13 +148,15 @@ const ViewAll_Info = ({ route, navigation }) => {
                   color: "#FFF",
                   fontFamily: FONTS.bold,
                   fontSize: 13,
-                  marginLeft: 5
+                  marginLeft: 5,
+                  
                 }}>
-                Sea Animal
+                Indoor Plant
               </Text>
             </TouchableOpacity>
 
             <FlatList
+              
               keyExtractor={(key) => {
                 return key._id;
               }}
@@ -138,7 +167,7 @@ const ViewAll_Info = ({ route, navigation }) => {
                   <Card
 
                     // here press can see each details indivitually
-
+                    
                     elevation={5}
                     style={styles.eventCard}
                     mode={"elevated"}
@@ -153,11 +182,13 @@ const ViewAll_Info = ({ route, navigation }) => {
                           justifyContent: "space-between",
                         }}
                       >
+                        {/* ---- Item Name ----- */}
+
                         <Title style={{ fontWeight: "bold" }}>{item.name}</Title>
 
                         <FAB
                           icon="pen"
-                          color="white"
+                          color="black"
                           small
                           style={styles.fab}
                           onPress={() => { navigation.push('AddInfoUpdate', { item }) }}
@@ -188,7 +219,7 @@ const ViewAll_Info = ({ route, navigation }) => {
                         </Text>
                       </View>
 
-                      {/* ---- Created At ----- */}
+                      {/* ---- Created On ----- */}
                       <View
                         style={{
                           flexDirection: "row",
@@ -234,7 +265,9 @@ const ViewAll_Info = ({ route, navigation }) => {
             {snackbarMessage}
           </Snackbar> */}
           </View>
-        )}
+        {/* )} */}
+        {/* </ScrollView> */}
+      </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -246,9 +279,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   eventCard: {
-    backgroundColor: "#BCE6FF",
+    backgroundColor: "#fbe5d8",
     marginVertical: 10,
     borderRadius: 23,
+    marginTop: 10
   },
 
   chip: {
@@ -257,7 +291,7 @@ const styles = StyleSheet.create({
   },
 
   fab: {
-    backgroundColor: "#ff8407",
+    backgroundColor: "#bcd49c",
   },
   snackbar: {
     flex: 1,
