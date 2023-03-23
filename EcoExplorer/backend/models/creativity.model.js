@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const donationSchema = mongoose.Schema({
+const creativitySchema = mongoose.Schema({
   name: {
     type: String,
     require: true,
@@ -8,24 +8,17 @@ const donationSchema = mongoose.Schema({
   from: {
     type: String,
     require: true,
-  },  
+  },
   email: {
     type: String,
     require: true,
   },
-  contactNo: {
-    type: String,
-    require: true,
-  },
-  amount: {
-    type: int,
-    require: true,
-  },
-  date: {
-    type: String,
-  },
+  
   description: {
     type: String,
+  },
+  image: {
+    type: Array,
   },
   tags: {
     type: Array,
@@ -36,6 +29,6 @@ const donationSchema = mongoose.Schema({
   },
 });
 
-const Donation = mongoose.model("Donation", donationSchema);
+const Creativity = mongoose.model("Creativity", creativitySchema);
 
-export default Donation;
+export default Creativity;
