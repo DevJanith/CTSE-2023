@@ -11,9 +11,12 @@ import {
   Portal,
   Provider,
   Snackbar,
-  Title
+  Title,
+  ImageBackground
  } from "react-native-paper";
 import baseURL from "../../../store";
+import FocusedStatusBar from '../../../components/FocusedStatusBar';
+import {  COLORS, FONTS, SIZES } from "../../../constants";
 
 const ViewEach_Info = ({ route, navigation }) => {
 
@@ -69,7 +72,17 @@ const ViewEach_Info = ({ route, navigation }) => {
 
   return (
     <Provider>
-    <SafeAreaView>
+    <SafeAreaView
+      style={{
+        flex: 1
+      }}>
+         {/* <ImageBackground
+          source={require('../../../assets/images/EcoExplorer/view_all_bg_2.png')}
+          style={{ width: "100%", height: "100%" }}> */}
+
+          {/* <FocusedStatusBar
+            background={COLORS.primary}
+          /> */}
       <View
         style={{
           padding: 10,
@@ -317,6 +330,7 @@ const ViewEach_Info = ({ route, navigation }) => {
       >
         {snackbarMessage}
       </Snackbar> */}
+      {/* </ImageBackground> */}
     </SafeAreaView>
     </Provider>
   )

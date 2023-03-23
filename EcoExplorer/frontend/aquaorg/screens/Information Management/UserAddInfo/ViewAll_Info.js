@@ -30,6 +30,7 @@ import FocusedStatusBar from '../../../components/FocusedStatusBar';
 
 const ViewAll_Info = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
+  const [user, setuser] = useState()
 
   const [reload, setReload] = useState(true);
   const [seaAnimal, setseaAnimal] = useState();
@@ -52,6 +53,11 @@ const ViewAll_Info = ({ route, navigation }) => {
         setLoading(false);
       });
   };
+
+  useEffect(() => {
+    console.log("View All +=====================>", userDetails)
+    setuser(userDetails)
+  }, [])
 
   const onDismissSnackBar = () => setVisible(false);
 
@@ -112,11 +118,26 @@ const ViewAll_Info = ({ route, navigation }) => {
               width: 300,
               alignSelf: "center",
               textAlign: "center",
-              marginTop:50,
+              marginTop:30,
               textShadowColor: 'rgba(0, 0, 0, 0.75)',
               textShadowOffset: { width: -1, height: 1 },
               textShadowRadius: 2
             }}>Life of Plants!</Text>
+
+
+            <Text style={{
+              color: "#357f54",
+              fontFamily: FONTS.semiBold,
+              fontSize: 20,
+              paddingHorizontal: 20,
+              marginLeft: 110,
+              marginTop: 10,
+              textShadowColor: 'rgba(0, 0, 0, 0.75)',
+              textShadowOffset: { width: -1, height: 1 },
+              textShadowRadius: 1
+                            
+            }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
+
 
             <Text style={{
               color: "#000000",
@@ -133,14 +154,14 @@ const ViewAll_Info = ({ route, navigation }) => {
                 flexDirection: "row",
                 backgroundColor: "#357f54",
                 alignItems: "center",
-                marginTop: 40,
+                marginTop: 30,
                 width: 115,
                 paddingVertical: 10,
                 borderRadius: 14,
                 paddingHorizontal: 10,
-                marginLeft:140,
+                marginLeft:135,
                 elevation:10,
-                marginBottom: 30
+                marginBottom: 20
               }}
             >
               <Text
