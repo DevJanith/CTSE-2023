@@ -80,7 +80,10 @@ const Home = ({ onSearch, navigation }) => {
                             fontFamily: FONTS.medium,
                             fontSize: 30,
                             color: "#000000",
-                            marginTop: 240
+                            marginTop: 240,
+                            textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                            textShadowOffset: { width: -1, height: 1 },
+                            textShadowRadius: 1
                         }}>
                         Welcome to 👋
                     </Text>
@@ -90,7 +93,10 @@ const Home = ({ onSearch, navigation }) => {
                             paddingHorizontal: 20,
                             fontFamily: FONTS.bold,
                             fontSize: 50,
-                            color: "#000000"
+                            color: "#000000",
+                            textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                            textShadowOffset: { width: -1, height: 1 },
+                            textShadowRadius: 6
                         }}>
                         Eco Explorer
                     </Text>
