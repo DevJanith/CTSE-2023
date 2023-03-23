@@ -18,7 +18,7 @@ const donationSchema = mongoose.Schema({
     require: true,
   },
   amount: {
-    type: int,
+    type: String,
     require: true,
   },
   date: {
