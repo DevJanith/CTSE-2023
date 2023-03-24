@@ -287,7 +287,7 @@ const DonationScreens = () => (
     <Stack.Screen
       name="AddDonation"
       component={AddDonation}
-      options={{ title: "Donation Methods" }}
+      options={{ title: "Donation Submission" }}
     />
     <Stack.Screen
       name="RecurringDonation"

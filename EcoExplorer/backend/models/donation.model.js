@@ -5,7 +5,7 @@ const donationSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  from: {
+  location: {
     type: String,
     require: true,
   },  
