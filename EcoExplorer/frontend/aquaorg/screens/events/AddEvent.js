@@ -253,7 +253,7 @@ const AddEvent = ({ navigation }) => {
               value={date}
               mode={mode}
               is24Hour={true}
-              display="spinner"
+              display="default"
               onChange={onChange}
             />
           )}
