@@ -256,7 +256,7 @@ const Donation = ({ navigation }) => {
                 <TouchableOpacity
                   style={styles.menuCard3}
                   onPress={() => {
-                    addEvent();
+                    navigation.push("AddCreativity");
                   }}
                 >
                   <Text style={styles.menuCardHeading}>Add Creativity</Text>
