@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Image, ImageBackground, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import FocusedStatusBar from '../../components/FocusedStatusBar'
-import { COLORS, FONTS, SIZES } from '../../constants'
-import SeaAnimalList from './SeaAnimalList'
+import React, { useContext, useEffect, useState } from 'react';
+import { Image, ImageBackground, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import FocusedStatusBar from '../../components/FocusedStatusBar';
+import { COLORS, FONTS, SIZES } from '../../constants';
 import { AuthContext } from '../../context/context';
+import SeaAnimalList from './SeaAnimalList';
 
 const Home = ({ onSearch, navigation }) => {
 
     const { userDetails } = useContext(AuthContext)
     const [user, setuser] = useState()
-  
+
     useEffect(() => {
-      console.log("Info +=====================>", userDetails)
-      setuser(userDetails)
+        console.log("Info +=====================>", userDetails)
+        setuser(userDetails)
     }, [])
 
     return (
@@ -20,63 +20,63 @@ const Home = ({ onSearch, navigation }) => {
             style={{
                 flex: 1
             }}>
-            
-                <ImageBackground
-                    source={require('../../assets/images/EcoExplorer/Home_bg.png')}
-                    style={{ width: "100%", height: "116%" }}>
 
-                    <FocusedStatusBar
-                        background={COLORS.primary}
-                    />
-                    <ScrollView>
+            <ImageBackground
+                source={require('../../assets/images/EcoExplorer/Home_bg.png')}
+                style={{ width: "100%", height: "116%" }}>
+
+                <FocusedStatusBar
+                    background={COLORS.primary}
+                />
+                <ScrollView>
 
                     <View style={{ flexDirection: "row" }}>
 
-                    <View style={{ flex: 2 }}>
-                        <Text style={{
-                            color: "#eaab39",
-                            fontFamily: FONTS.semiBold,
-                            fontSize: 25,
-                            paddingHorizontal: 20,
-                            marginTop: 35,
-                            marginBottom: 10,
-                            textShadowColor: 'rgba(0, 0, 0, 0.75)',
-                            textShadowOffset: { width: -1, height: 1 },
-                            textShadowRadius: 6
-                            
-                        }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
-                    </View>
+                        <View style={{ flex: 2 }}>
+                            <Text style={{
+                                color: "#eaab39",
+                                fontFamily: FONTS.semiBold,
+                                fontSize: 25,
+                                paddingHorizontal: 20,
+                                marginTop: 35,
+                                marginBottom: 10,
+                                textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                                textShadowOffset: { width: -1, height: 1 },
+                                textShadowRadius: 6
 
-                    <View style={{ flex: 1 }}>
-                        
-                        <View
-                            style={{
-                                width: "100%",
-                                alignItems: "flex-end",
-                                paddingHorizontal: 20
-                            }}>
+                            }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
+                        </View>
+
+                        <View style={{ flex: 1 }}>
 
                             <View
                                 style={{
-                                    paddingHorizontal: 10,
-                                    paddingVertical: 12,
-                                    borderRadius: 10,
-                                    marginTop: 30,
-                                    backgroundColor: 'rgba(52, 52, 52, 0.6)',
-                                    elevation:6
+                                    width: "100%",
+                                    alignItems: "flex-end",
+                                    paddingHorizontal: 20
                                 }}>
 
-                                <Image
-                                    source={require('../../assets/images/Info/home_menu.png')}
-                                    style={{ width: 20, height: 15 }}
-                                />
+                                <View
+                                    style={{
+                                        paddingHorizontal: 10,
+                                        paddingVertical: 12,
+                                        borderRadius: 10,
+                                        marginTop: 30,
+                                        backgroundColor: 'rgba(52, 52, 52, 0.6)',
+                                        elevation: 6
+                                    }}>
+
+                                    <Image
+                                        source={require('../../assets/images/Info/home_menu.png')}
+                                        style={{ width: 20, height: 15 }}
+                                    />
+                                </View>
                             </View>
                         </View>
-                    </View>
 
                     </View>
 
-                    
+
                     <Text
                         style={{
                             paddingHorizontal: 20,
@@ -114,7 +114,7 @@ const Home = ({ onSearch, navigation }) => {
                             borderRadius: 18,
                             marginHorizontal: 30,
                             marginTop: 20,
-                            elevation:10
+                            elevation: 10
                         }}>
                         <TextInput
                             placeholder="Search for new Knowledge!"
@@ -137,7 +137,7 @@ const Home = ({ onSearch, navigation }) => {
                     </View>
 
                     {/* ------------------ Start Learning ------------------------------------ */}
-                    
+
                     <View
                         style={{
                             flexDirection: "row",
@@ -147,7 +147,7 @@ const Home = ({ onSearch, navigation }) => {
                             borderRadius: 30,
                             paddingVertical: 30,
                             paddingLeft: 30,
-                            elevation:6
+                            elevation: 6
                         }}
                     >
                         <View>
@@ -171,7 +171,7 @@ const Home = ({ onSearch, navigation }) => {
                             >Life of Plants!</Text>
 
                             <TouchableOpacity
-                                onPress={() => { navigation.push('InfoCategories') }} 
+                                onPress={() => { navigation.push('InfoCategories') }}
                                 style={{
                                     flexDirection: "row",
                                     backgroundColor: "#81B622",
@@ -214,42 +214,42 @@ const Home = ({ onSearch, navigation }) => {
                     {/* ------------------ Featured Categories ------------------------------------ */}
 
                     <View style={{ flexDirection: "row" }}>
-                    <View style={{ flex: 2 }}>
-                        <Text style={{
-                            color: "#000000",
-                            fontFamily: FONTS.bold,
-                            fontSize: 22,
-                            paddingHorizontal: 20,
-                            marginTop: 30,
-                            marginBottom: 10
-                        }}>Featured Categories</Text>
-                    </View>
-
-                    <View style={{ flex: 1 }}>
-                        <TouchableOpacity
-                            style={{
-                                backgroundColor: "#81B622",
-                                alignItems: "center",
-                                width: 80,
-                                paddingVertical: 5,
-                                borderRadius: 20,
-                                paddingHorizontal: 5,
+                        <View style={{ flex: 2 }}>
+                            <Text style={{
+                                color: "#000000",
+                                fontFamily: FONTS.bold,
+                                fontSize: 22,
+                                paddingHorizontal: 20,
                                 marginTop: 30,
-                                marginLeft: 40,
-                                alignContent: "center",
-                                elevation:10
-                            }}
-                            onPress={() => { navigation.push('InfoSeaAnimal') }}
+                                marginBottom: 10
+                            }}>Featured Categories</Text>
+                        </View>
+
+                        <View style={{ flex: 1 }}>
+                            <TouchableOpacity
+                                style={{
+                                    backgroundColor: "#81B622",
+                                    alignItems: "center",
+                                    width: 80,
+                                    paddingVertical: 5,
+                                    borderRadius: 20,
+                                    paddingHorizontal: 5,
+                                    marginTop: 30,
+                                    marginLeft: 40,
+                                    alignContent: "center",
+                                    elevation: 10
+                                }}
+                                onPress={() => { navigation.push('InfoSeaAnimal') }}
                             >
                                 <Text style={{
                                     fontFamily: FONTS.medium,
                                     fontSize: SIZES.small,
                                     color: "#000000",
                                 }}>
-                                More
+                                    More
                                 </Text>
-                        </TouchableOpacity>
-                    </View>
+                            </TouchableOpacity>
+                        </View>
 
                     </View>
 
@@ -293,8 +293,8 @@ const Home = ({ onSearch, navigation }) => {
                             borderRadius: 30,
                             paddingVertical: 30,
                             paddingLeft: 30,
-                            marginBottom:150,
-                            elevation:6
+                            marginBottom: 150,
+                            elevation: 6
                         }}
                     >
                         <View>
@@ -333,10 +333,10 @@ const Home = ({ onSearch, navigation }) => {
                                     width: 250,
                                     marginTop: 15
                                 }}
-                            >You can share your knlowledge 
-                            by sharing with others......
-                            {'\n'}{'\n'}
-                            Knowledge can only be volunteered it cannot be conscripted
+                            >You can share your knlowledge
+                                by sharing with others......
+                                {'\n'}{'\n'}
+                                Knowledge can only be volunteered it cannot be conscripted
                             </Text>
 
                             <TouchableOpacity
@@ -368,17 +368,17 @@ const Home = ({ onSearch, navigation }) => {
                         <Image
                             source={require('../../assets/images/EcoExplorer/question-mark.png')}
                             style={{
-                                width:100,
-                                height:100,
+                                width: 100,
+                                height: 100,
                                 marginLeft: -140,
                                 marginTop: 30,
                             }}
                         />
                     </View>
 
-                    </ScrollView>
-                </ImageBackground>
-            
+                </ScrollView>
+            </ImageBackground>
+
         </SafeAreaView>
     )
 }

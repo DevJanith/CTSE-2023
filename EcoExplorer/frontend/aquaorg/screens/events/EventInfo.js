@@ -28,13 +28,19 @@ const EventInfo = ({ navigation }) => {
         <ScrollView>
           <View style={{ flex: 1 }}>
             <ImageBackground
-              source={assets.b3}
+              source={require("../../assets/images/EcoExplorer/Home_bg.png")}
               resizeMode="cover"
               style={styles.image}
             >
               <Card elevation={5} style={styles.eventCard} mode={"elevated"}>
                 <Card.Content>
-                  <Title style={{ fontWeight: "bold", fontSize: 25 }}>
+                  <Title
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 25,
+                      color: COLORS.darkTextColor,
+                    }}
+                  >
                     What is Events?
                   </Title>
 
@@ -54,7 +60,13 @@ const EventInfo = ({ navigation }) => {
 
               <Card elevation={5} style={styles.eventCard} mode={"elevated"}>
                 <Card.Content>
-                  <Title style={{ fontWeight: "bold", fontSize: 25 }}>
+                  <Title
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 25,
+                      color: COLORS.darkTextColor,
+                    }}
+                  >
                     Functionalities
                   </Title>
 
@@ -74,7 +86,13 @@ const EventInfo = ({ navigation }) => {
               </Card>
               <Card elevation={5} style={styles.eventCard} mode={"elevated"}>
                 <Card.Content>
-                  <Title style={{ fontWeight: "bold", fontSize: 25 }}>
+                  <Title
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 25,
+                      color: COLORS.darkTextColor,
+                    }}
+                  >
                     FAQ
                   </Title>
 

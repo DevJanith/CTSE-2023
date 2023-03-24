@@ -15,12 +15,14 @@ import {
   IconButton,
   Chip,
   Snackbar,
+  Colors,
 } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const AddEvent = ({ navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -175,7 +177,7 @@ const AddEvent = ({ navigation }) => {
         <View style={styles.formContainer}>
           <TextInput
             mode="outlined"
-            activeOutlineColor="#015C92"
+            activeOutlineColor={Colors.green300}
             label="Enter Event Name"
             style={styles.inputField}
             value={eventName}
@@ -192,7 +194,7 @@ const AddEvent = ({ navigation }) => {
           <TextInput
             mode="outlined"
             label="Enter Organizer Name"
-            activeOutlineColor="#015C92"
+            activeOutlineColor={Colors.green300}
             value={oraganizer}
             style={styles.inputField}
             onChangeText={(text) => {
@@ -218,7 +220,7 @@ const AddEvent = ({ navigation }) => {
               uppercase={false}
               style={styles.dateBtn}
               mode="contained"
-              color="#53A7DB"
+              color={Colors.green700}
               onPress={() => {
                 showMode("date");
               }}
@@ -236,7 +238,7 @@ const AddEvent = ({ navigation }) => {
               uppercase={false}
               style={styles.dateBtn}
               mode="contained"
-              color="#53A7DB"
+              color={Colors.green700}
               onPress={() => {
                 showMode("time");
               }}
@@ -257,78 +259,88 @@ const AddEvent = ({ navigation }) => {
           )}
         </View>
 
-        <TextInput
-          mode="outlined"
-          label="Event Date and Time"
-          activeOutlineColor="#015C92"
-          value={eventDate}
-          style={styles.inputField}
-          disabled={true}
-          onChangeText={(text) => {
-            setEventDate(text);
-          }}
-        />
-        {/* {checkValidaDate ? (
-          <Text style={styles.textFailed}>*Event date is required</Text>
-        ) : (
-          <Text style={styles.textFailed}></Text>
-        )} */}
-        <TextInput
-          mode="outlined"
-          multiline={true}
-          activeOutlineColor="#015C92"
-          label="Enter Description about Event... "
-          style={styles.inputField}
-          value={description}
-          onChangeText={(text) => {
-            setDescription(text);
-            handleCheckDescription(text);
-          }}
-        />
-        {checkValidaDescription ? (
-          <Text style={styles.textFailed}>*Event description is required</Text>
-        ) : (
-          <Text style={styles.textFailed}></Text>
-        )}
         <View
           style={{
-            flexDirection: "row",
-            marginBottom: 10,
+            paddingHorizontal: 5,
           }}
         >
           <TextInput
             mode="outlined"
-            activeOutlineColor="#015C92"
-            label="Add Tags"
-            style={[styles.inputField, styles.inputFieldsmall]}
-            value={tag}
-            onChangeText={(text) => setTag(text)}
-          />
-          <IconButton
-            style={{
-              marginTop: 8,
+            label="Event Date and Time"
+            activeOutlineColor={Colors.green300}
+            value={eventDate}
+            style={styles.inputField}
+            disabled={true}
+            onChangeText={(text) => {
+              setEventDate(text);
             }}
-            icon="plus"
-            size={40}
-            color="#53A7DB"
-            onPress={() => addToTags()}
-          ></IconButton>
-        </View>
-        <View style={{ flexDirection: "row", marginTop: 2, marginBottom: 10 }}>
-          {tags.map((item, key) => (
-            <Chip
-              // icon="information"
-              textStyle={{
-                fontWeight: "800",
+          />
+          {/* {checkValidaDate ? (
+          <Text style={styles.textFailed}>*Event date is required</Text>
+        ) : (
+          <Text style={styles.textFailed}></Text>
+        )} */}
+          <TextInput
+            mode="outlined"
+            multiline={true}
+            activeOutlineColor={Colors.green300}
+            label="Enter Description about Event... "
+            style={styles.inputField}
+            value={description}
+            onChangeText={(text) => {
+              setDescription(text);
+              handleCheckDescription(text);
+            }}
+          />
+          {checkValidaDescription ? (
+            <Text style={styles.textFailed}>
+              *Event description is required
+            </Text>
+          ) : (
+            <Text style={styles.textFailed}></Text>
+          )}
+          <View
+            style={{
+              flexDirection: "row",
+              marginBottom: 10,
+            }}
+          >
+            <TextInput
+              mode="outlined"
+              activeOutlineColor={Colors.green300}
+              label="Add Tags"
+              style={[styles.inputField, styles.inputFieldsmall]}
+              value={tag}
+              onChangeText={(text) => setTag(text)}
+            />
+            <IconButton
+              style={{
+                marginTop: 8,
               }}
-              style={styles.chip}
-              mode="flat"
-              selectedColor="#443F3F"
-              key={key}
-            >
-              {item}
-            </Chip>
-          ))}
+              icon="plus"
+              size={40}
+              color={Colors.green700}
+              onPress={() => addToTags()}
+            ></IconButton>
+          </View>
+          <View
+            style={{ flexDirection: "row", marginTop: 2, marginBottom: 10 }}
+          >
+            {tags.map((item, key) => (
+              <Chip
+                // icon="information"
+                textStyle={{
+                  fontWeight: "800",
+                }}
+                style={styles.chip}
+                mode="flat"
+                selectedColor={Colors.white}
+                key={key}
+              >
+                {item}
+              </Chip>
+            ))}
+          </View>
         </View>
 
         <TouchableOpacity
@@ -378,7 +390,7 @@ const styles = StyleSheet.create({
     marginLeft: 3,
   },
   submitButton: {
-    backgroundColor: "#015C92",
+    backgroundColor: Colors.green900,
     marginTop: 10,
     marginBottom: 30,
     alignSelf: "center",
@@ -395,7 +407,7 @@ const styles = StyleSheet.create({
     backgroundColor: "",
   },
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   btnText: {

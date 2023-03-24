@@ -11,8 +11,7 @@ const ResetPassword = ({ navigation }) => {
         <>
             <SafeAreaView
                 style={{
-                    flex: 1,
-                    backgroundColor: "#fbe5d8"
+                    flex: 1
                 }}>
                 <FocusedStatusBar
                     background={COLORS.primary}
@@ -25,12 +24,7 @@ const ResetPassword = ({ navigation }) => {
                                 fontSize: 40,
                                 marginTop: 100,
                                 marginBottom: 50,
-                                textAlign: "center",
-                                marginLeft: -20,
-                                color: "#295405",
-                                textShadowColor: 'rgba(0, 0, 0, 0.75)',
-                                textShadowOffset: { width: -1, height: 1 },
-                                textShadowRadius: 6,
+                                textAlign: "center"
                             }}>
                                 Reset Password
                             </Text>
@@ -43,17 +37,14 @@ const ResetPassword = ({ navigation }) => {
                                     fontFamily: FONTS.bold,
                                     fontSize: SIZES.medium,
                                     color: COLORS.primary,
-                                    margin: SIZES.base,
-                                    marginBottom: 20,
+                                    margin: SIZES.base
                                 }}>
                                     Email Address
                                 </Text>
-
-                                {/* ============================ text input ============================== */}
                                 <View style={{
                                     width: "100%",
                                     borderRadius: SIZES.font,
-                                    backgroundColor: "#93a688",
+                                    backgroundColor: COLORS.lightCustomColor,
                                     flexDirection: "row",
                                     alignItems: "center",
                                     paddingHorizontal: SIZES.font,
@@ -71,53 +62,14 @@ const ResetPassword = ({ navigation }) => {
                                     />
                                     <TextInput
                                         placeholder='Enter Email Address'
-                                        style={{ flex: 1, color: COLORS.white, fontWeight: "bold"  }}
+                                        style={{ flex: 1, color: COLORS.white }}
                                         onChangeText={() => { }}
                                     />
                                 </View>
                             </View>
-
-                            {/* =================== reset password button ============================= */}
                             <View
                                 style={{
-                                    marginTop: SIZES.extraLarge,
-                                    alignItems: "center",
-                                    marginBottom: SIZES.extraLarge
-                                }}
-                            >
-                                <TouchableOpacity
-                                    style={{
-                                        backgroundColor: "#2f5019",
-                                        padding: SIZES.font,
-                                        // margin: SIZES.small,
-                                        marginRight: SIZES.large,
-                                        borderRadius: SIZES.font,
-                                        marginTop: 30,
-                                        alignContent: "center",
-                                        width: '60%',
-                                        borderRadius: 30
-
-                                    }}
-                                    onPress={() => { alert("password rest email sent") }}
-                                >
-                                    <Text style={{
-                                        fontFamily: FONTS.bold,
-                                        fontSize: SIZES.large,
-                                        color: COLORS.white,
-                                        textAlign: "center"
-                                    }}>
-                                        Reset Password
-                                    </Text>
-                                </TouchableOpacity>
-                            </View>
-
-
-                            {/* ============================ already user link ===================== */}
-                            <View
-                                style={{
-                                    margin: SIZES.base,
-                                    marginTop: -15,
-                                    marginLeft: 115
+                                    margin: SIZES.base
                                 }}
                             >
                                 <Text style={{
@@ -138,7 +90,37 @@ const ResetPassword = ({ navigation }) => {
                                     > Log In</Text>
                                 </Text>
                             </View>
+                            <View
+                                style={{
+                                    marginTop: SIZES.extraLarge,
+                                    alignItems: "center",
+                                    marginBottom: SIZES.extraLarge
+                                }}
+                            >
+                                <TouchableOpacity
+                                    style={{
+                                        backgroundColor: COLORS.darkCustomColor,
+                                        padding: SIZES.font,
+                                        // margin: SIZES.small,
+                                        marginRight: SIZES.large,
+                                        borderRadius: SIZES.font,
+                                        marginTop: 10,
+                                        alignContent: "center",
+                                        width: '50%'
 
+                                    }}
+                                    onPress={() => { alert("password rest email sent") }}
+                                >
+                                    <Text style={{
+                                        fontFamily: FONTS.bold,
+                                        fontSize: SIZES.large,
+                                        color: COLORS.white,
+                                        textAlign: "center"
+                                    }}>
+                                        Reset Password
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </ScrollView>

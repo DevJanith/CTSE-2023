@@ -63,7 +63,10 @@ export const COLORS = {
   darkGreen: "#295a54",
   darkGreen2: "#84945c",
   darkGreen3: "#529990",
-  lightGreen: "#cdf2e0",
+  lightGreen: "#fbe5d8",
+
+  darkTextColor: "#345C70",
+  lightTextColor: "#4391B8",
 
   pink: "#ff6666",
 };

@@ -1,22 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
-  Button,
-  FlatList,
-  Image,
-  SafeAreaView,
+  Image, ImageBackground, SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  ImageBackground
+  View
 } from "react-native";
-import { Card, Paragraph, Title } from "react-native-paper";
 import { getUser } from "../api";
-import { ScreenContainer } from "../components";
-import { COLORS, FONTS, SIZES } from '../constants'
+import { COLORS, FONTS } from '../constants';
+import { sizes } from "../constants/theme";
 import { AuthContext } from "../context/context";
-import { sizes, spacing } from "../constants/theme";
 
 const CARD_WIDTH = sizes.width - 100;
 const CARD_HEIGHT = 200;
