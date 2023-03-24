@@ -71,10 +71,10 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
     return (
 
         <ImageBackground
-            source={require('../../../assets/images/Info/add_Info_bg.png')}
+            source={require('../../../assets/images/EcoExplorer/add_Info_bg.png')}
             style={{
                 width: "100%",
-                height: "113%"
+                height: "105%"
             }}
         >
 
@@ -104,24 +104,26 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
             <Text style={{
                 color: "#000000",
                 fontFamily: FONTS.bold,
+                marginTop: 20,
                 fontSize: 30,
                 width: 200,
                 alignSelf: "center",
                 textAlign: "center",
-            }}>Life Below Water</Text>
+            }}>Life of Plants!</Text>
 
             <TouchableOpacity disabled={true}
                 style={{
                     flexDirection: "row",
-                    backgroundColor: "#015C92",
+                    backgroundColor: "#023020",
                     alignItems: "center",
                     marginTop: 10,
-                    width: 105,
+                    width: 115,
                     paddingVertical: 10,
                     borderRadius: 50,
                     paddingHorizontal: 10,
-                    marginLeft: 165,
-                    elevation: 10
+                    marginLeft: 160,
+                    elevation: 10,
+                    marginTop: 20
                 }}
             >
                 <Text
@@ -131,7 +133,7 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
                         fontSize: 13,
                         marginLeft: 5
                     }}>
-                    Sea Animal
+                    Indoor Plants
                 </Text>
             </TouchableOpacity>
 
@@ -146,7 +148,7 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
 
 
             <ScrollView style={{
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "#FAF9F6",
                 borderRadius: 50,
                 marginTop: -20,
             }}
@@ -334,7 +336,7 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
                             // onPress={() => { navigation.push('InfoCategories') }}
                             style={{
                                 flexDirection: "row",
-                                backgroundColor: "#015C92",
+                                backgroundColor: "#023020",
                                 alignItems: "center",
                                 marginTop: 20,
                                 marginLeft: -10,

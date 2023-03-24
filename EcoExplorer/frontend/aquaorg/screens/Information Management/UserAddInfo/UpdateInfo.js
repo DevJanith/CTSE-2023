@@ -14,139 +14,142 @@ import baseURL from "../../../store";
 
 const UpdateInfo = ({ route, navigation }) => {
 
-  const { item } = route.params;
+    const { item } = route.params;
 
-  const [user, setuser] = useState();
-  const [animalName, setanimalName] = useState();
-  const [animalIntro, setanimalIntro] = useState();
-  const [animalLifeSpan, setanimalLifeSpan] = useState();
-  const [animalMass, setanimalMass] = useState();
-  const [animalLength, setanimalLength] = useState();
-  const [animalExplain, setanimalExplain] = useState();
+    const [visible, setVisible] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState("");
 
-  const [text, setText] = useState("Empty");
-  const [loading, setLoading] = useState(false);
+    const [user, setuser] = useState();
+    const [animalName, setanimalName] = useState();
+    const [animalIntro, setanimalIntro] = useState();
+    const [animalLifeSpan, setanimalLifeSpan] = useState();
+    const [animalMass, setanimalMass] = useState();
+    const [animalLength, setanimalLength] = useState();
+    const [animalExplain, setanimalExplain] = useState();
 
-//form Data
-const [formData, setFormData] = useState({
-  email: "",
-  name: "",
-  introduction: "",
-  lifespan: "",
-  mass: "",
-  length: "",
-  explanantion: ""
-});
+    const [text, setText] = useState("Empty");
+    const [loading, setLoading] = useState(false);
 
-useEffect(() => {
-  if (typeof user == "undefined") return
-  setFormData({ ...formData, email: user.email })
-}, [user])
+    //form Data
+    const [formData, setFormData] = useState({
+        email: "",
+        name: "",
+        introduction: "",
+        lifespan: "",
+        mass: "",
+        length: "",
+        explanantion: ""
+    });
 
-useEffect(() => {
-  console.log(">>>>>>>>>>>> form data   ", formData);
-}, [formData])
+    useEffect(() => {
+        if (typeof user == "undefined") return
+        setFormData({ ...formData, email: user.email })
+    }, [user])
 
-
-
-const onChangeName = (value) => {
-  setFormData({ ...formData, name: value })
-}
-
-const onChangeIntro = (value) => {
-  setFormData({ ...formData, introduction: value })
-}
-
-const onChangeLifespan = (value) => {
-  setFormData({ ...formData, lifespan: value })
-}
-
-const onChangeMass = (value) => {
-  setFormData({ ...formData, mass: value })
-}
-
-const onChangeLength = (value) => {
-  setFormData({ ...formData, length: value })
-}
-
-const onChangeExplain = (value) => {
-  setFormData({ ...formData, explanantion: value })
-}
+    useEffect(() => {
+        console.log(">>>>>>>>>>>> form data   ", formData);
+    }, [formData])
 
 
-  //-------------------------    Update Function ---------------------------------
 
-  useEffect(() => {
-    setanimalName(item.name);
-    setanimalIntro(item.introduction);
-    setanimalLifeSpan(item.lifespan);
-    setanimalMass(item.mass);
-    setanimalLength(item.length);
-    setanimalExplain(item.explanantion);
-  }, []);
+    const onChangeName = (value) => {
+        setFormData({ ...formData, name: value })
+    }
 
-  const updateSeaAnimal = () => {
-    console.log(item);
-    // handleCheckDate(eventDate);
-    // handleCheckEventName(eventName);
-    // handleCheckDescription(description);
-    // handleCheckOrganizer(oraganizer);
-    if (animalName && animalIntro && animalLifeSpan && animalMass && animalLength && animalExplain) {
-      setLoading(true);
-      // get this user id from login
-      // let userID = 1;
-      const data = {
-        
-        // email: user,
-        name: animalName,
-        introduction: animalIntro,
-        lifespan: animalLifeSpan,
-        mass: animalMass,
-        length: animalLength,
-        explanantion: animalExplain
+    const onChangeIntro = (value) => {
+        setFormData({ ...formData, introduction: value })
+    }
 
-      };
+    const onChangeLifespan = (value) => {
+        setFormData({ ...formData, lifespan: value })
+    }
 
-      // console.log(data);
-      axios
-        .put(baseURL + "/aqua-org/sea-animal/" + item._id, data)
-        .then((response) => {
-          setLoading(false);
-          if (response.status == 200) {
-            setVisible(true);
-            setSnackbarMessage("Details Updated Succsesfully!");
-            navigation.navigate("AddInfoViewAll", { reloadVal: Math.random() });
-          } else {
-            setVisible(true);
-            setSnackbarMessage("Failed to Update Details.");
-          }
-        })
-        .catch((err) => {
-          setLoading(false);
-          console.log(err);
-          setVisible(true);
-          setSnackbarMessage("Something went wrong!");
-        });
-    } 
-    // else {
-    //   if (!eventName) {
-    //     setCheckValidEventName(true);
-    //   }
-    //   if (!eventDate) {
-    //     setCheckValidDate(true);
-    //   }
-    //   if (!oraganizer) {
-    //     setCheckValidOrganizer(true);
-    //   }
-    //   if (!description) {
-    //     setCheckValidDescription(true);
-    //   }
-    // }
-  };
+    const onChangeMass = (value) => {
+        setFormData({ ...formData, mass: value })
+    }
 
-  return (
-    
-    <ImageBackground
+    const onChangeLength = (value) => {
+        setFormData({ ...formData, length: value })
+    }
+
+    const onChangeExplain = (value) => {
+        setFormData({ ...formData, explanantion: value })
+    }
+
+
+    //-------------------------    Update Function ---------------------------------
+
+    useEffect(() => {
+        setanimalName(item.name);
+        setanimalIntro(item.introduction);
+        setanimalLifeSpan(item.lifespan);
+        setanimalMass(item.mass);
+        setanimalLength(item.length);
+        setanimalExplain(item.explanantion);
+    }, []);
+
+    const updateSeaAnimal = () => {
+        console.log(item);
+        // handleCheckDate(eventDate);
+        // handleCheckEventName(eventName);
+        // handleCheckDescription(description);
+        // handleCheckOrganizer(oraganizer);
+        if (animalName && animalIntro && animalLifeSpan && animalMass && animalLength && animalExplain) {
+            setLoading(true);
+            // get this user id from login
+            // let userID = 1;
+            const data = {
+
+                // email: user,
+                name: animalName,
+                introduction: animalIntro,
+                lifespan: animalLifeSpan,
+                mass: animalMass,
+                length: animalLength,
+                explanantion: animalExplain
+
+            };
+
+            // console.log(data);
+            axios
+                .put(baseURL + "info/" + item._id, data)
+                .then((response) => {
+                    setLoading(false);
+                    if (response.status == 200) {
+                        setVisible(true);
+                        setSnackbarMessage("Details Updated Succsesfully!");
+                        navigation.navigate("AddInfoViewAll", { reloadVal: true });
+                    } else {
+                        setVisible(true);
+                        setSnackbarMessage("Failed to Update Details.");
+                    }
+                })
+                .catch((err) => {
+                    setLoading(false);
+                    console.log(err);
+                    setVisible(true);
+                    setSnackbarMessage("Something went wrong!");
+                });
+        }
+        // else {
+        //   if (!eventName) {
+        //     setCheckValidEventName(true);
+        //   }
+        //   if (!eventDate) {
+        //     setCheckValidDate(true);
+        //   }
+        //   if (!oraganizer) {
+        //     setCheckValidOrganizer(true);
+        //   }
+        //   if (!description) {
+        //     setCheckValidDescription(true);
+        //   }
+        // }
+    };
+
+    return (
+
+        <ImageBackground
             source={require('../../../assets/images/Info/add_Info_bg.png')}
             style={{
                 width: "100%",
@@ -252,8 +255,8 @@ const onChangeExplain = (value) => {
                     keyboardType="ascii-capable"
                     value={animalName}
                     onChangeText={(text) => {
-                      setanimalName(text);
-                      // handleCheckEventName(text);
+                        setanimalName(text);
+                        // handleCheckEventName(text);
                     }}
                 />
 
@@ -269,8 +272,8 @@ const onChangeExplain = (value) => {
                 <TextInput
                     style={styles.desc}
                     onChangeText={(text) => {
-                      setanimalIntro(text);
-                      // handleCheckEventName(text);
+                        setanimalIntro(text);
+                        // handleCheckEventName(text);
                     }}
                     value={animalIntro}
                     placeholder="Enter Introduction Here"
@@ -295,8 +298,8 @@ const onChangeExplain = (value) => {
                         <TextInput
                             style={styles.input_span}
                             onChangeText={(text) => {
-                              setanimalLifeSpan(text);
-                              // handleCheckEventName(text);
+                                setanimalLifeSpan(text);
+                                // handleCheckEventName(text);
                             }}
                             value={animalLifeSpan}
                             placeholder="Enter LifeSpan Here"
@@ -324,8 +327,8 @@ const onChangeExplain = (value) => {
                         <TextInput
                             style={styles.input_span}
                             onChangeText={(text) => {
-                              setanimalMass(text);
-                              // handleCheckEventName(text);
+                                setanimalMass(text);
+                                // handleCheckEventName(text);
                             }}
                             value={animalMass}
                             placeholder="Enter Mass Here"
@@ -354,8 +357,8 @@ const onChangeExplain = (value) => {
                         <TextInput
                             style={styles.input_span}
                             onChangeText={(text) => {
-                              setanimalLength(text);
-                              // handleCheckEventName(text);
+                                setanimalLength(text);
+                                // handleCheckEventName(text);
                             }}
                             value={animalLength}
                             placeholder="Enter Length Here"
@@ -379,8 +382,8 @@ const onChangeExplain = (value) => {
                 <TextInput
                     style={styles.desc}
                     onChangeText={(text) => {
-                      setanimalExplain(text);
-                      // handleCheckEventName(text);
+                        setanimalExplain(text);
+                        // handleCheckEventName(text);
                     }}
                     value={animalExplain}
                 />
@@ -472,38 +475,38 @@ const onChangeExplain = (value) => {
 
         </ImageBackground>
 
-  )
+    )
 }
 
 export default UpdateInfo;
 
 const styles = StyleSheet.create({
-  input: {
-      width: 330,
-      height: 40,
-      margin: 12,
-      borderWidth: 1,
-      padding: 10,
-      marginLeft: 50
-  },
+    input: {
+        width: 330,
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        marginLeft: 50
+    },
 
-  desc: {
-      width: 330,
-      height: 100,
-      margin: 12,
-      borderWidth: 1,
-      padding: 10,
-      marginLeft: 50,
-      marginTop: 10
-  },
+    desc: {
+        width: 330,
+        height: 100,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        marginLeft: 50,
+        marginTop: 10
+    },
 
-  input_span: {
-      width: 240,
-      height: 40,
-      margin: 12,
-      borderWidth: 1,
-      padding: 10,
-      marginLeft: -150
-  },
+    input_span: {
+        width: 240,
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        marginLeft: -150
+    },
 
 });

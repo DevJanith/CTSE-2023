@@ -30,7 +30,7 @@ const WantAddInfo = ({ navigation }) => {
   return (
 
     <ImageBackground
-      source={require('../../../assets/images/Info/Want_to_Addbg.png')}
+      source={require('../../../assets/images/EcoExplorer/Want_to_Addbg.png')}
       style={{
         width: "100%",
         height: "110%"
@@ -68,17 +68,18 @@ const WantAddInfo = ({ navigation }) => {
         width: 500,
         marginLeft: 35,
         textAlign: "left",
-        marginTop: 55,
+        marginTop: 75,
         elevation: 10,
 
       }}>
         Want to{'\n'}Add{'\n'}Informations
 
         <Image
-          source={require('../../../assets/images/Info/question_2.png')}
+          source={require('../../../assets/images/EcoExplorer/stress.png')}
           style={{
             width: 50,
             height: 50,
+            elevation: 10
           }}
         />
 
@@ -92,7 +93,7 @@ const WantAddInfo = ({ navigation }) => {
         width: 500,
         marginLeft: 30,
         textAlign: "left",
-        marginTop: 70,
+        marginTop: 50,
         elevation: 10,
 
       }}>📍 Categories</Text>
@@ -102,7 +103,7 @@ const WantAddInfo = ({ navigation }) => {
       <Modalize
         handleStyle={{
           marginTop: 30,
-          backgroundColor: "#53A7DB",
+          backgroundColor: "#357f54",
           width: 80
         }}
         modalStyle={{
@@ -117,13 +118,13 @@ const WantAddInfo = ({ navigation }) => {
           marginTop: 40,
           marginBottom: 10
         }}>
-          {/* ------------------------------- sea animals -----------------------------------------------------*/}
+          {/* ------------------------------- Indoor Plants -----------------------------------------------------*/}
 
             <TouchableOpacity
                 onPress={() => { navigation.push('AddInfoCreate') }}
                 style={{
                     flexDirection: "row",
-                    backgroundColor: "#BCE6FF",
+                    backgroundColor: "#fbe5d8",
                     padding: 20,
                     marginHorizontal: 20,
                     borderRadius: 20,
@@ -133,7 +134,7 @@ const WantAddInfo = ({ navigation }) => {
                 }}
             >
                 <Image
-                    source={require('../../../assets/images/Info/sea_animal.png')}
+                    source={require('../../../assets/images/EcoExplorer/Indoor.png')}
                     style={{ width: 60, height: 60 }}
                 />
 
@@ -146,7 +147,7 @@ const WantAddInfo = ({ navigation }) => {
                             paddingHorizontal: 20,
                             width: 170
                         }}
-                    >Sea Animals</Text>
+                    >Indoor Plants</Text>
                     <Text
                         style={{
                             color:"#f58084",
@@ -167,7 +168,7 @@ const WantAddInfo = ({ navigation }) => {
                 />
             </TouchableOpacity> 
 
-{/* ------------------------------- sea plants -----------------------------------------------------*/}
+{/* ------------------------------- Outdoor Plants -----------------------------------------------------*/}
 
             <TouchableOpacity
                 onPress={() => { 
@@ -177,7 +178,7 @@ const WantAddInfo = ({ navigation }) => {
                 }}
                 style={{
                     flexDirection: "row",
-                    backgroundColor: "#BCE6FF",
+                    backgroundColor: "#fbe5d8",
                     padding: 20,
                     marginHorizontal: 20,
                     borderRadius: 20,
@@ -187,7 +188,7 @@ const WantAddInfo = ({ navigation }) => {
                 }}
             >
                 <Image
-                    source={require('../../../assets/images/Info/sea_plant.png')}
+                    source={require('../../../assets/images/EcoExplorer/outdoor.png')}
                     style={{ width: 60, height: 60 }}
                 />
 
@@ -198,9 +199,9 @@ const WantAddInfo = ({ navigation }) => {
                             fontFamily: FONTS.bold,
                             fontSize: 20,
                             paddingHorizontal: 20,
-                            width: 170
+                            width: 190
                         }}
-                    >Sea Plants</Text>
+                    >Outdoor Plants</Text>
                     <Text
                         style={{
                             color:"#f58084",
@@ -228,7 +229,7 @@ const WantAddInfo = ({ navigation }) => {
                                 onPress={() => { navigation.push('AddInfoViewAll') }}
                                 style={{
                                     flexDirection: "row",
-                                    backgroundColor: "#015C92",
+                                    backgroundColor: "#357f54",
                                     alignItems: "center",
                                     marginTop: 30,
                                     width: 150,

@@ -4,6 +4,7 @@ import {
   ActivityIndicator,
   Card,
   Chip,
+  Colors,
   FAB,
   IconButton,
   Paragraph,
@@ -92,7 +93,7 @@ const AllEvents = ({ navigation }) => {
         >
           <ActivityIndicator
             animating={loading}
-            color="#015C92"
+            color={Colors.green600}
             hidesWhenStopped={true}
             size="large"
           />
@@ -122,7 +123,14 @@ const AllEvents = ({ navigation }) => {
                         justifyContent: "space-between",
                       }}
                     >
-                      <Title style={{ fontWeight: "bold" }}>{item.name}</Title>
+                      <Title
+                        style={{
+                          fontWeight: "bold",
+                          color: COLORS.darkTextColor,
+                        }}
+                      >
+                        {item.name}
+                      </Title>
 
                       <FAB
                         icon="heart-outline"
@@ -233,7 +241,7 @@ const styles = StyleSheet.create({
   },
 
   chip: {
-    backgroundColor: COLORS.darkGreen,
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
 

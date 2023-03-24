@@ -4,7 +4,7 @@ const aquaOrgAPI = axios.create({
   //your IP address here
   //   baseURL: "http://192.168.1.3:8000/rest-api/v1/",
   // baseURL: "http://192.168.100.84:5000/rest-api/v1/",
-  baseURL: "http://192.168.1.5:8000/rest-api/v1/",
+  baseURL: "http://192.168.1.8:8000/rest-api/v1/",
   // baseURL : "http://aqua-org.herokuapp.com/rest-api/v1/"
 });
 
@@ -29,12 +29,11 @@ export const getMarksAccordingToUserId = (userId) =>
   aquaOrgAPI.get(`marks/${userId}`);
 export const deleteMarks = (id) => aquaOrgAPI.delete(`marks/${id}`);
 
-export const createSeaAnimal = (data) => aquaOrgAPI.post(`sea-animal/`, data);
-export const getAllSeaAnimals = () => aquaOrgAPI.get(`sea-animal/`);
-export const getSeaAnimal = (id) => aquaOrgAPI.get(`sea-animal/${id}`);
-export const deleteSeaAnimal = (id) => aquaOrgAPI.delete(`sea-animal/${id}`);
-export const updateSeaAnimal = (id) => aquaOrgAPI.put(`sea-animal/${id}`);
-export const getSeaAnimalbyEmail = (email) =>
-  aquaOrgAPI.get(`sea-animal/${email}`);
+export const createSeaAnimal = (data) => aquaOrgAPI.post(`info/`, data);
+export const getAllSeaAnimals = () => aquaOrgAPI.get(`info/`);
+export const getSeaAnimal = (id) => aquaOrgAPI.get(`info/${id}`);
+export const deleteSeaAnimal = (id) => aquaOrgAPI.delete(`info/${id}`);
+export const updateSeaAnimal = (id) => aquaOrgAPI.put(`info/${id}`);
+export const getSeaAnimalbyEmail = (email) => aquaOrgAPI.get(`info/${email}`);
 
 export default aquaOrgAPI;
