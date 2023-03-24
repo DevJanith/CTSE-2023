@@ -15,12 +15,14 @@ import {
   IconButton,
   Chip,
   Snackbar,
+  Colors,
 } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import axios from "axios";
 import baseURL from "../../store";
 import { AuthContext } from "../../context/context";
 import aquaOrgAPI from "../../api";
+import { COLORS } from "../../constants";
 
 const EditEvent = ({ route, navigation }) => {
   const { userDetails } = useContext(AuthContext);
@@ -187,7 +189,7 @@ const EditEvent = ({ route, navigation }) => {
         <View style={styles.formContainer}>
           <TextInput
             mode="outlined"
-            activeOutlineColor="#015C92"
+            activeOutlineColor={Colors.green300}
             label="Enter Event Name"
             style={styles.inputField}
             value={eventName}
@@ -204,7 +206,7 @@ const EditEvent = ({ route, navigation }) => {
           <TextInput
             mode="outlined"
             label="Enter Organizer Name"
-            activeOutlineColor="#015C92"
+            activeOutlineColor={Colors.green300}
             value={oraganizer}
             style={styles.inputField}
             onChangeText={(text) => {
@@ -231,7 +233,7 @@ const EditEvent = ({ route, navigation }) => {
               uppercase={false}
               style={styles.dateBtn}
               mode="contained"
-              color="#53A7DB"
+              color={Colors.green700}
               onPress={() => {
                 showMode("date");
               }}
@@ -249,7 +251,7 @@ const EditEvent = ({ route, navigation }) => {
               uppercase={false}
               style={styles.dateBtn}
               mode="contained"
-              color="#53A7DB"
+              color={Colors.green700}
               onPress={() => {
                 showMode("time");
               }}
@@ -273,7 +275,7 @@ const EditEvent = ({ route, navigation }) => {
         <TextInput
           mode="outlined"
           label="Event Date and Time"
-          activeOutlineColor="#015C92"
+          activeOutlineColor={Colors.green300}
           value={eventDate}
           style={styles.inputField}
           disabled={true}
@@ -283,7 +285,7 @@ const EditEvent = ({ route, navigation }) => {
         <TextInput
           mode="outlined"
           multiline={true}
-          activeOutlineColor="#015C92"
+          activeOutlineColor={Colors.green300}
           label="Enter Description about Event... "
           style={styles.inputField}
           value={description}
@@ -305,7 +307,7 @@ const EditEvent = ({ route, navigation }) => {
         >
           <TextInput
             mode="outlined"
-            activeOutlineColor="#015C92"
+            activeOutlineColor={Colors.green300}
             label="Add Tags"
             style={[styles.inputField, styles.inputFieldsmall]}
             value={tag}
@@ -317,7 +319,7 @@ const EditEvent = ({ route, navigation }) => {
             }}
             icon="plus"
             size={40}
-            color="#53A7DB"
+            color={Colors.green700}
             onPress={() => addToTags()}
           />
         </View>
@@ -338,8 +340,8 @@ const EditEvent = ({ route, navigation }) => {
               }}
               style={styles.chip}
               mode="flat"
-              selectedColor="#443F3F"
               key={key}
+              selectedColor={Colors.white}
             >
               {item}
             </Chip>
@@ -393,7 +395,7 @@ const styles = StyleSheet.create({
   },
 
   submitButton: {
-    backgroundColor: "#015C92",
+    backgroundColor: Colors.green900,
     marginTop: 10,
     marginBottom: 30,
     alignSelf: "center",
@@ -410,7 +412,7 @@ const styles = StyleSheet.create({
     backgroundColor: "",
   },
   chip: {
-    backgroundColor: "#53A7DB",
+    backgroundColor: COLORS.darkGreen3,
     marginRight: 10,
   },
   btnText: {
