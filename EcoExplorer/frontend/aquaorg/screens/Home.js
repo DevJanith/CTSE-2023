@@ -9,12 +9,17 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ImageBackground
 } from "react-native";
 import { Card, Paragraph, Title } from "react-native-paper";
 import { getUser } from "../api";
 import { ScreenContainer } from "../components";
-import { assets, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from '../constants'
 import { AuthContext } from "../context/context";
+import { sizes, spacing } from "../constants/theme";
+
+const CARD_WIDTH = sizes.width - 100;
+const CARD_HEIGHT = 200;
 
 const Home = ({ navigation }) => {
   const { logout } = useContext(AuthContext);
@@ -51,134 +56,240 @@ const Home = ({ navigation }) => {
   }, []);
 
   return (
-    // <ScreenContainer>
-    //     <View>
-    //         <Text>Home</Text>
-    //         <Button title='Log Out' onPress={() => { logout() }} />
-    //     </View>
-    // </ScreenContainer>
 
     <SafeAreaView
       style={{
         flex: 1,
       }}
     >
-      <ScrollView>
-        <View style={{ flex: 1 }}>
-          <View style={{ zIndex: 0, marginLeft: 10, marginRight: 10 }}>
-            <View style={styles.titleContainer}>
-              {/* <Text style={styles.heading}>Welcome Back</Text> */}
+      <ImageBackground
+        source={require('../assets/images/EcoExplorer/main_home_bg_2.png')}
+        style={{ width: "100%", height: "100%" }}>
+        <ScrollView>
+          <View style={{ flex: 1 }}>
+            <View style={{ zIndex: 0, marginLeft: 10, marginRight: 10 }}>
+              <View style={styles.titleContainer}>
 
-              <TouchableOpacity
-                style={styles.fab}
-                onPress={() => {
-                  logout();
-                }}
-              >
-                <Text
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: 13,
-                    marginLeft: 3,
-                    textAlign: "center",
+                {/* ================ logout =================== */}
+                <TouchableOpacity
+                  style={styles.fab}
+                  onPress={() => {
+                    logout();
                   }}
                 >
-                  Logout
-                </Text>
-              </TouchableOpacity>
-            </View>
+                  <Image
+                    source={require('../assets/images/EcoExplorer/log-out.png')}
+                    style={{
+                      height: 25,
+                      width: 25,
+                      marginTop: 1
+                    }}
+                  />
+                </TouchableOpacity>
+              </View>
 
-            <View
-              style={{
-                marginTop: "40%",
-              }}
-            >
-              <Text style={[styles.heading, { marginBottom: 0 }]}>
-                Welcome Back
-              </Text>
-              <Text style={[styles.heading2, { marginTop: 0 }]}>{name}</Text>
-            </View>
-
-            <View
-              style={{
-                marginTop: "5%",
-                alignItems: "center",
-              }}
-            >
-              <View
+              {/* ================= title =================== */}
+              <Image
+                source={require('../assets/images/EcoExplorer/eco_explorer.png')}
                 style={{
-                  flex: 2.7,
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
+                  height: 30,
+                  width: 28,
+                  marginTop: 250,
+                  marginBottom: -90,
+                  marginLeft: 370
                 }}
-              >
-                <TouchableOpacity
-                  style={styles.menuCard1}
-                  elevation={5}
-                  onPress={() => {
-                    navigation.navigate("EventSC");
-                  }}
-                >
-                  <Text style={styles.menuCardHeading}>Information</Text>
-                </TouchableOpacity>
+              />
+              <Text
+                style={{
+                  paddingHorizontal: 20,
+                  fontFamily: FONTS.bold,
+                  fontSize: 60,
+                  color: "#295405",
+                  textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                  textShadowOffset: { width: -1, height: 1 },
+                  textShadowRadius: 6,
+                  marginTop: 50,
+                  marginLeft: 250
+                }}>
+                Eco
+              </Text>
+              <Text
+                style={{
+                  paddingHorizontal: 20,
+                  fontFamily: FONTS.bold,
+                  fontSize: 60,
+                  color: "#295405",
+                  textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                  textShadowOffset: { width: -1, height: 1 },
+                  textShadowRadius: 6,
+                  marginTop: -25,
+                  marginLeft: 120
+                }}>
+                Explorer
+              </Text>
 
-                <TouchableOpacity
-                  style={styles.menuCard2}
-                  elevation={5}
-                  onPress={() => {
-                    navigation.navigate("EventSC");
-                  }}
-                >
-                  <Text style={styles.menuCardHeading}>Q & A</Text>
-                </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={styles.menuCard3}
-                  onPress={() => {
-                    navigation.navigate("EventSC");
-                  }}
+              <View>
+                <ScrollView
+                  horizontal={true}
+                  showsHorizontalScrollIndicator={false}
+                  pagingEnabled={true}
                 >
-                  <Text style={styles.menuCardHeading}>Events</Text>
-                </TouchableOpacity>
+                  {/* =============== Information ==================== */}
+                  <TouchableOpacity
+                    // onPress={() => { navigation.push('InfoHome') }}
+                    style={{
+                      flexDirection: "column",
+                      backgroundColor: "#357f54",
+                      alignItems: "center",
+                      marginTop: 30,
+                      width: 250,
+                      paddingVertical: 10,
+                      borderRadius: 35,
+                      paddingHorizontal: 10,
+                      height: 200,
+                      marginLeft: 10
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: COLORS.white,
+                        fontFamily: FONTS.bold,
+                        fontSize: 25,
+                        marginLeft: -26,
+                        marginTop: 10
+                      }}>
+                      Explore Informations !
+                    </Text>
+                    <Image
+                      source={require('../assets/images/EcoExplorer/right_arrow.png')}
+                      style={{
+                        marginLeft: 160,
+                        marginTop: 60,
+                        width: 35,
+                        height: 35
+                      }}
+                    />
+                  </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={styles.menuCard4}
-                  elevation={5}
-                  onPress={() => {
-                    navigation.navigate("EventSC");
-                  }}
-                >
-                  <Text style={styles.menuCardHeading}>Donation</Text>
-                </TouchableOpacity>
+                  {/* =============== Q & A ==================== */}
+
+                  <TouchableOpacity
+                    // onPress={() => { navigation.push('InfoCategories') }}
+                    style={{
+                      flexDirection: "column",
+                      backgroundColor: "#81B622",
+                      alignItems: "center",
+                      marginTop: 30,
+                      width: 250,
+                      paddingVertical: 10,
+                      borderRadius: 35,
+                      paddingHorizontal: 10,
+                      height: 200,
+                      marginLeft: 10
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: COLORS.white,
+                        fontFamily: FONTS.bold,
+                        fontSize: 25,
+                        marginTop: 10
+                      }}>
+                      Explore Question & Answers !
+                    </Text>
+                    <Image
+                      source={require('../assets/images/EcoExplorer/right_arrow.png')}
+                      style={{
+                        marginLeft: 160,
+                        marginTop: 60,
+                        width: 35,
+                        height: 35
+                      }}
+                    />
+                  </TouchableOpacity>
+
+                  {/* =============== Event ==================== */}
+
+                  <TouchableOpacity
+                    // onPress={() => { navigation.push('InfoCategories') }}
+                    style={{
+                      flexDirection: "column",
+                      backgroundColor: "#228B22",
+                      alignItems: "center",
+                      marginTop: 30,
+                      width: 250,
+                      paddingVertical: 10,
+                      borderRadius: 35,
+                      paddingHorizontal: 10,
+                      height: 200,
+                      marginLeft: 10
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: COLORS.white,
+                        fontFamily: FONTS.bold,
+                        fontSize: 25,
+                        marginTop: 10
+                      }}>
+                      Explore Events Details !
+                    </Text>
+                    <Image
+                      source={require('../assets/images/EcoExplorer/right_arrow.png')}
+                      style={{
+                        marginLeft: 160,
+                        marginTop: 60,
+                        width: 35,
+                        height: 35
+                      }}
+                    />
+                  </TouchableOpacity>
+
+                  {/* ========================== Donation ========================== */}
+
+                  <TouchableOpacity
+                    // onPress={() => { navigation.push('InfoCategories') }}
+                    style={{
+                      flexDirection: "column",
+                      backgroundColor: "#AFE1AF",
+                      alignItems: "center",
+                      marginTop: 30,
+                      width: 250,
+                      paddingVertical: 10,
+                      borderRadius: 35,
+                      paddingHorizontal: 10,
+                      height: 200,
+                      marginLeft: 10
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: COLORS.black,
+                        fontFamily: FONTS.bold,
+                        fontSize: 25,
+                        marginTop: 10
+                      }}>
+                      Explore Donation Details !
+                    </Text>
+                    <Image
+                      source={require('../assets/images/EcoExplorer/right_arrow.png')}
+                      style={{
+                        marginLeft: 160,
+                        marginTop: 60,
+                        width: 35,
+                        height: 35
+                      }}
+                    />
+                  </TouchableOpacity>
+
+                </ScrollView>
               </View>
             </View>
           </View>
-          <View
-            style={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              zIndex: -1,
-            }}
-          >
-            <Image
-              source={assets.b4}
-              resizeMode="cover"
-              style={{
-                width: "100%",
-                height: 300,
-                borderBottomLeftRadius: SIZES.medium,
-                borderBottomRightRadius: SIZES.medium,
-              }}
-            />
-          </View>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+      </ImageBackground >
+    </SafeAreaView >
   );
 };
 
@@ -221,7 +332,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     padding: 0,
     margin: 10,
-    color: "white",
+    color: "black",
   },
 
   heading2: {
@@ -251,14 +362,15 @@ const styles = StyleSheet.create({
   },
 
   fab: {
-    height: 30,
-    width: 100,
-    borderRadius: 20,
+    height: 40,
+    width: 40,
+    borderRadius: 50,
     padding: 4,
     top: 20,
-    backgroundColor: "#337DA9",
-    borderWidth: 1,
-    borderColor: "white",
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderColor: "black",
+    elevation: 18
   },
 
   menuCard1: {
@@ -268,7 +380,7 @@ const styles = StyleSheet.create({
     width: 130,
     height: 100,
     // borderBottomRightRadius: 30,
-    borderBottomLeftRadius:30,
+    borderBottomLeftRadius: 30,
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
     display: "flex",
