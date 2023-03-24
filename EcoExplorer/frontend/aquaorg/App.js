@@ -70,9 +70,9 @@ import AddInfoUpdate from "./screens/Information Management/UserAddInfo/UpdateIn
 import LogOut from "./screens/auth/LogOut";
 
 import AddDonation from "./screens/DonationManagement/AddDonation";
-import RecurringDonation from "./screens/DonationManagement/RecurringDonation";
-import OneTimeDonation from "./screens/DonationManagement/OneTimeDonation";
-import AddDetails from "./screens/DonationManagement/AddDetails";
+import AddCreativity from "./screens/DonationManagement/AddCreativity";
+import AllDonation from "./screens/DonationManagement/AllDonation";
+import AllCreativity from "./screens/DonationManagement/AllCreativity";
 
 //internal styling
 const theme = {
@@ -295,14 +295,14 @@ const DonationScreens = () => (
       options={{ title: "Creativity Submission" }}
     />
     <Stack.Screen
-      name="OneTimeDonation"
-      component={OneTimeDonation}
-      options={{ title: "One Time Donations" }}
+      name="AllCreativity"
+      component={AllCreativity}
+      options={{ title: "All Creativity" }}
     />
     <Stack.Screen
-      name="AddDetails"
-      component={AddDetails}
-      options={{ title: "Enter the Details" }}
+      name="AllDonation"
+      component={AllDonation}
+      options={{ title: "All Donations" }}
     />
   </Stack.Navigator>
 );
@@ -462,9 +462,9 @@ export default function App() {
                 if (typeof routeName == "undefined") return;
                 if (
                   routeName == "AddDonation" ||
-                  routeName == "RecurringDonation" ||
-                  routeName == "OneTimeDonation" ||
-                  routeName == "AddDetails"
+                  routeName == "AllDonation" ||
+                  routeName == "AddCreativity" ||
+                  routeName == "AllCreativity"
                 )
                   return { headerShown: false };
                 return { title: "Donation Page" };
