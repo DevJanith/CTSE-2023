@@ -23,14 +23,14 @@ import { AuthContext } from "../../context/context";
 import aquaOrgAPI from "../../api";
 
 const AddDonation = ({ navigation }) => {
-  // const { userDetails } = useContext(AuthContext);
+  const { userDetails } = useContext(AuthContext);
 
   const [name, setName] = useState();
   const [location, setLocation] = useState();
   const [contactNo, setContactNo] = useState();
   const [email, setEmail] = useState();
   const [amount, setAmount] = useState();
-  const [tags, setTags] = useState([]);
+  
   const [loading, setLoading] = useState(false);
 
   // validations
@@ -40,32 +40,8 @@ const AddDonation = ({ navigation }) => {
   const [checkValidaEmail, setCheckValidEmail] = useState(false);
   const [checkValidaAmount, setCheckValidAmount] = useState(false);
 
-  const [tag, setTag] = useState();
-
-  const [date, setDate] = useState(new Date());
-  const [mode, setMode] = useState("date");
-  const [show, setShow] = useState(false);
-  const [text, setText] = useState("Empty");
   const [visible, setVisible] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-
-  
-
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
-  };
-  function addToTags() {
-    if (tag) {
-      let existingTags = tags;
-
-      setTag("");
-
-      existingTags.push(tag);
-      setTags(existingTags);
-      console.log(existingTags);
-    }
-  }
   const onDismissSnackBar = () => setVisible(false);
 
   const SubmitDonation = () => {
@@ -75,20 +51,19 @@ const AddDonation = ({ navigation }) => {
     handleCheckEmail(email);
     handleCheckAmount(amount);
 
-    console.log(checkValidName);
+    // console.log(checkValidName);
 
     if (name && location && contactNo && email && amount) {
       setLoading(true);
       // get this user id from login
-      let userID = userDetails._id;
+      // let userID = userDetails._id;
       const data = {
-        user: userID,
         name: name,
         location: location,
         contactNo: contactNo,
         email: email,
         amount: amount,
-        tags: tags,
+        
       };
 
       console.log(data);
@@ -253,23 +228,7 @@ const AddDonation = ({ navigation }) => {
           )}
         </View>
 
-        
-        <View style={{ flexDirection: "row", marginTop: 2, marginBottom: 10 }}>
-          {tags.map((item, key) => (
-            <Chip
-              // icon="information"
-              textStyle={{
-                fontWeight: "800",
-              }}
-              style={styles.chip}
-              mode="flat"
-              selectedColor="#443F3F"
-              key={key}
-            >
-              {item}
-            </Chip>
-          ))}
-        </View>
+
 
         <TouchableOpacity
           style={styles.submitButton}
@@ -331,9 +290,7 @@ const styles = StyleSheet.create({
   dateBtn: {
     width: 100,
   },
-  addTagsBtn: {
-    backgroundColor: "",
-  },
+  
   chip: {
     backgroundColor: "#53A7DB",
     marginRight: 10,

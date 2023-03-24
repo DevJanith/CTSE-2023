@@ -44,17 +44,17 @@ const Donation = ({ navigation }) => {
     getEventsData();
   }, []);
 
-  function viewAllEvents() {
-    navigation.navigate("AllEvents");
+  function allDonation() {
+    navigation.navigate("AllDonation");
   }
-  function addEvent() {
-    navigation.navigate("AddEvent");
+  function addDonation() {
+    navigation.navigate("AddDonation");
   }
-  function viewYourEvents() {
-    navigation.navigate("YourEvents", { reloadVal: true });
+  function allCreativity() {
+    navigation.navigate("AllCreativity", { reloadVal: true });
   }
-  function interestedEvents() {
-    navigation.navigate("InterestedEvents");
+  function addCreativity() {
+    navigation.navigate("AddCreativity");
   }
 
   useEffect(() => {
@@ -70,11 +70,11 @@ const Donation = ({ navigation }) => {
         <View style={{ flex: 1 }}>
           <View style={{ zIndex: 0, marginLeft: 10, marginRight: 10 }}>
             <View style={styles.titleContainer}>
-              <Text style={styles.heading}>Top Events</Text>
+              <Text style={styles.heading}>Top Donations</Text>
 
               <TouchableOpacity
                 style={styles.fab}
-                onPress={() => viewAllEvents()}
+                onPress={() => allDonation()}
               >
                 <Text
                   style={{
@@ -90,7 +90,7 @@ const Donation = ({ navigation }) => {
               </TouchableOpacity>
             </View>
 
-            <View style={styles.topEventsContainer}>
+            {/* <View style={styles.topEventsContainer}>
               <View></View>
               <FlatList
                 keyExtractor={(key) => {
@@ -108,7 +108,7 @@ const Donation = ({ navigation }) => {
                       onPress={() => {
                         navigation.navigate("ViewEvent", { item });
                       }}
-                    >
+                    > 
                       <Card.Content>
                         <Title
                           ellipsizeMode="tail"
@@ -149,7 +149,7 @@ const Donation = ({ navigation }) => {
                   );
                 }}
               />
-            </View>
+            </View> */}
 
             <View
               style={{
@@ -182,7 +182,7 @@ const Donation = ({ navigation }) => {
                     >
                       <Title>
                         <Text style={{ color: "white" }}>
-                          What is Events ?{" "}
+                          How Can Donate ?{" "}
                         </Text>
                       </Title>
                       <Paragraph>
@@ -239,7 +239,7 @@ const Donation = ({ navigation }) => {
                   style={styles.menuCard2}
                   elevation={5}
                   onPress={() => {
-                    viewYourEvents();
+                    navigation.push("AllDonation");
                   }}
                 >
                   <Text style={styles.menuCardHeading}>View Your Donations</Text>
@@ -274,7 +274,7 @@ const Donation = ({ navigation }) => {
                   style={styles.menuCard4}
                   elevation={5}
                   onPress={() => {
-                    interestedEvents();
+                    navigation.push("AllCreativity");
                   }}
                 >
                   <Text style={styles.menuCardHeading}>All Creativity</Text>

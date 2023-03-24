@@ -22,88 +22,62 @@ import {
   import { AuthContext } from "../../context/context";
   import aquaOrgAPI from "../../api";
   
-  const AddDonation = ({ navigation }) => {
-    // const { userDetails } = useContext(AuthContext);
+  const AddCreativity = ({ navigation }) => {
   
     const [name, setName] = useState();
     const [location, setLocation] = useState();
-    const [contactNo, setContactNo] = useState();
     const [email, setEmail] = useState();
-    const [amount, setAmount] = useState();
-    const [tags, setTags] = useState([]);
+    const [description, setDescription] = useState();
+    const [image, setImage] = useState();
     const [loading, setLoading] = useState(false);
   
     // validations
     const [checkValidaName, setCheckValidName] = useState(false);
     const [checkValidaLocation, setCheckValidLocation] = useState(false);
-    const [checkValidaContactNo, setCheckValidContactNo] = useState(false);
     const [checkValidaEmail, setCheckValidEmail] = useState(false);
-    const [checkValidaAmount, setCheckValidAmount] = useState(false);
+    const [checkValidaDescription, setCheckValidDescription] = useState(false);
+    const [checkValidaImage, setCheckValidImage] = useState(false);
   
-    const [tag, setTag] = useState();
-  
-    const [date, setDate] = useState(new Date());
-    const [mode, setMode] = useState("date");
-    const [show, setShow] = useState(false);
-    const [text, setText] = useState("Empty");
     const [visible, setVisible] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState("");
   
     
   
-    const showMode = (currentMode) => {
-      setShow(true);
-      setMode(currentMode);
-    };
-    function addToTags() {
-      if (tag) {
-        let existingTags = tags;
-  
-        setTag("");
-  
-        existingTags.push(tag);
-        setTags(existingTags);
-        console.log(existingTags);
-      }
-    }
+   
     const onDismissSnackBar = () => setVisible(false);
   
-    const SubmitDonation = () => {
+    const SubmitCreativity = () => {
       handleCheckName(name);
       handleCheckLocation(location);
-      handleCheckContactNo(contactNo);
       handleCheckEmail(email);
-      handleCheckAmount(amount);
+      handleCheckDescription(description);
+      handleCheckImage(image);
   
-      console.log(checkValidName);
-  
-      if (name && location && contactNo && email && amount) {
+      if (name && location && email && description && image) {
         setLoading(true);
-        // get this user id from login
-        let userID = userDetails._id;
         const data = {
-          user: userID,
+         
           name: name,
           location: location,
-          contactNo: contactNo,
           email: email,
-          amount: amount,
-          tags: tags,
+          description: description,
+          image: image,
+          
         };
   
         console.log(data);
   
         aquaOrgAPI
-          .post("donation", data)
+          .post("creativity", data)
           .then((response) => {
             setLoading(false);
             if (response.status == 200) {
               setVisible(true);
-              setSnackbarMessage("Donation Added Succsesfully!");
-              navigation.navigate("AllDonation", { reloadVal: Math.random() });
+              setSnackbarMessage("Creativity Added Succsesfully!");
+              navigation.navigate("AllCreativity", { reloadVal: Math.random() });
             } else {
               setVisible(true);
-              setSnackbarMessage("Failed to add Donation.");
+              setSnackbarMessage("Failed to add Creativity.");
             }
           })
           .catch((err) => {
@@ -119,15 +93,17 @@ import {
         if (!location) {
           setCheckValidLocation(true);
         }
-        if (!contactNo) {
-          setCheckValidContactNo(true);
-        }
+       
         if (!email) {
           setCheckValidEmail(true);
         }
-        if (!amount) {
-          setCheckValidAmount(true);
+        if (!description) {
+          setCheckValidDescription(true);
         }
+        if (!image) {
+          setCheckValidImage(true);
+        }
+        
       }
     };
   
@@ -145,13 +121,7 @@ import {
         setCheckValidLocation(true);
       }
     }
-    function handleCheckContactNo(text) {
-      if (text) {
-        setCheckValidContactNo(false);
-      } else {
-        setCheckValidContactNo(true);
-      }
-    }
+    
     function handleCheckEmail(text) {
       if (text) {
         setCheckValidEmail(false);
@@ -159,11 +129,18 @@ import {
         setCheckValidEmail(true);
       }
     }
-    function handleCheckAmount(text) {
+    function handleCheckDescription(text) {
       if (text) {
-        setCheckValidAmount(false);
+        setCheckValidDescription(false);
       } else {
-        setCheckValidAmount(true);
+        setCheckValidDescription(true);
+      }
+    }
+    function handleCheckImage(text) {
+      if (text) {
+        setCheckValidImage(false);
+      } else {
+        setCheckValidImage(true);
       }
     }
     return (
@@ -203,22 +180,7 @@ import {
               <Text style={styles.textFailed}></Text>
             )}
   
-            <TextInput
-              mode="outlined"
-              activeOutlineColor="#015C92"
-              label="Enter Your ContactNo"
-              style={styles.inputField}
-              value={contactNo}
-              onChangeText={(text) => {
-                setContactNo(text);
-                handleCheckContactNo(text);
-              }}
-            />
-            {checkValidaContactNo ? (
-              <Text style={styles.textFailed}>*ContactNo field is required</Text>
-            ) : (
-              <Text style={styles.textFailed}></Text>
-            )}
+           
             <TextInput
               mode="outlined"
               activeOutlineColor="#015C92"
@@ -235,47 +197,49 @@ import {
             ) : (
               <Text style={styles.textFailed}></Text>
             )}
+            
             <TextInput
               mode="outlined"
               activeOutlineColor="#015C92"
-              label="Enter Your Amount"
+              label="Enter Your Description"
               style={styles.inputField}
-              value={amount}
+              value={description}
               onChangeText={(text) => {
-                setAmount(text);
-                handleCheckAmount(text);
+                setDescription(text);
+                handleCheckDescription(text);
               }}
             />
-            {checkValidaAmount ? (
-              <Text style={styles.textFailed}>*Amount field is required</Text>
+            {checkValidaDescription ? (
+              <Text style={styles.textFailed}>*Description field is required</Text>
             ) : (
               <Text style={styles.textFailed}></Text>
             )}
+            {/* <TextInput
+              mode="outlined"
+              activeOutlineColor="#015C92"
+              label="Upload Your Creative Image"
+              style={styles.inputField}
+              value={image}
+              onChangeText={(text) => {
+                setImage(text);
+                handleCheckImage(text);
+              }}
+            />
+            {checkValidaImage ? (
+              <Text style={styles.textFailed}>*Image field is required</Text>
+            ) : (
+              <Text style={styles.textFailed}></Text>
+            )} */}
           </View>
   
           
-          <View style={{ flexDirection: "row", marginTop: 2, marginBottom: 10 }}>
-            {tags.map((item, key) => (
-              <Chip
-                // icon="information"
-                textStyle={{
-                  fontWeight: "800",
-                }}
-                style={styles.chip}
-                mode="flat"
-                selectedColor="#443F3F"
-                key={key}
-              >
-                {item}
-              </Chip>
-            ))}
-          </View>
+         
   
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={() => SubmitDonation()}
+            onPress={() => SubmitCreativity()}
           >
-            <Text style={styles.btnText}> Submit Donation</Text>
+            <Text style={styles.btnText}> Submit Creativity</Text>
           </TouchableOpacity>
   
           <Snackbar
@@ -295,7 +259,7 @@ import {
     );
   };
   
-  export default AddDonation;
+  export default AddCreativity;
   
   const styles = StyleSheet.create({
     formContainer: {
@@ -330,9 +294,6 @@ import {
   
     dateBtn: {
       width: 100,
-    },
-    addTagsBtn: {
-      backgroundColor: "",
     },
     chip: {
       backgroundColor: "#53A7DB",
