@@ -50,6 +50,13 @@ import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
 
+
+import Quick_QA_bg from "../assets/images/EcoExplorer/quick_qa_home.png";
+import Previous_QA_bg from "../assets/images/EcoExplorer/previous_bg.png";
+import Previous_QA_bg_2 from "../assets/images/EcoExplorer/previous_bg_2.png";
+import leader_board_2 from "../assets/images/EcoExplorer/leader_board_2.png";
+import leader_board_3 from "../assets/images/EcoExplorer/leader_board_3.png";
+
 export default {
   badge,
   eth,
@@ -102,5 +109,12 @@ export default {
   menu3,
   menu4,
 
-  go
+  go,
+
+  Quick_QA_bg,
+  Previous_QA_bg,
+  Previous_QA_bg_2,
+  // leader_board,
+  leader_board_2,
+  leader_board_3,
 };

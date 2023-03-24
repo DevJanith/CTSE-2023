@@ -7,24 +7,24 @@ import { assets } from '../../../constants'
 
 const PreviousQAHome = ({ navigation }) => {
   const FeatureWelcomePageData = {
-    title: "Welcome to Previous Q & A",
+    title: " Welcome to Previous \n Q & A",
     content: "Previous Q & A will show the previously attempt Q & A ‘s and it details",
     features: [
       {
         id: 1,
-        content: "In here you can view you’re previous Q & A Attempts."
+        content: "In here you can view you’re previous Q & A Attempts............................................."
       },
       {
         id: 2,
-        content: "You can learn from past failures by viewing the answers."
+        content: "You can learn from past failures by viewing the answers................................."
       },
       {
         id: 3,
-        content: "You can refresh you’re understanding about life below water."
+        content: "You can refresh you’re understanding about life below water.............................."
       },
     ],
     button: {
-      title: "View Previous Q & A ...",
+      title: "View Previous Q & A",
       link: "Previous"
     }
   }
@@ -36,7 +36,7 @@ const PreviousQAHome = ({ navigation }) => {
           backgroundColor="transparent"
           translucent={true}
         />
-        <DetailsHeader navigation={navigation} image={assets.b6} />
+        <DetailsHeader navigation={navigation} image={assets.Previous_QA_bg} />
         <FeatureWelcomePage FeatureWelcomePageData={FeatureWelcomePageData} navigation={navigation} />
       </ScrollView>
     </SafeAreaView>

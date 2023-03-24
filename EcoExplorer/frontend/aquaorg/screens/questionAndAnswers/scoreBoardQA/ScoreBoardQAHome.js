@@ -7,7 +7,7 @@ import { assets } from '../../../constants'
 
 const ScoreBoardQAHome = ({ navigation }) => {
   const FeatureWelcomePageData = {
-    title: "Welcome to Global Score Board",
+    title: "Welcome to \n Global Score Board",
     content: "Global Score Board will rank scores according to asc act and you’re score will be part of it",
     features: [
       {
@@ -36,7 +36,7 @@ const ScoreBoardQAHome = ({ navigation }) => {
           backgroundColor="transparent"
           translucent={true}
         />
-        <DetailsHeader navigation={navigation} image={assets.b8} />
+        <DetailsHeader navigation={navigation} image={assets.leader_board_3} />
         <FeatureWelcomePage FeatureWelcomePageData={FeatureWelcomePageData} navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
