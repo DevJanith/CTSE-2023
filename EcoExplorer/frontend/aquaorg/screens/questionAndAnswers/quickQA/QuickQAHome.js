@@ -40,7 +40,7 @@ const QuickQAHome = ({ navigation }) => {
           backgroundColor="transparent"
           translucent={true}
         />
-        <DetailsHeader navigation={navigation} image={assets.b7} />
+        <DetailsHeader navigation={navigation} image={assets.Quick_QA_bg} />
         <FeatureWelcomePage FeatureWelcomePageData={FeatureWelcomePageData} navigation={navigation} />
       </ScrollView>
     </SafeAreaView>

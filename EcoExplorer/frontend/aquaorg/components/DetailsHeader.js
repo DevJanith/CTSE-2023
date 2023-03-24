@@ -7,7 +7,7 @@ import { assets } from '../constants';
 export const DetailsHeader = ({ navigation, data, image }) => {
 
     return (
-        <View style={{ width: "100%", height: 90 }}>
+        <View style={{ width: "100%", height: 250 }}>
             <Image
                 source={image}
                 resizeMode="cover"
