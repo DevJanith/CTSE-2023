@@ -98,7 +98,7 @@ const Registration = ({ navigation }) => {
                                         height: 30,
                                         width: 28,
                                         marginTop: 60,
-                                        marginBottom: -90,
+                                        marginBottom: -72,
                                         marginLeft: 150
                                     }}
                                 />
