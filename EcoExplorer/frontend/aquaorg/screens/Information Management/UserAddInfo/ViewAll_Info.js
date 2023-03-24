@@ -24,7 +24,7 @@ import { deleteSeaAnimal, getAllSeaAnimals } from '../../../api/index';
 import { FlatList } from "react-native-gesture-handler";
 import axios from "axios";
 import baseURL from "../../../store";
-import {  COLORS, FONTS, SIZES } from "../../../constants";
+import { COLORS, FONTS, SIZES } from "../../../constants";
 import { AuthContext } from "../../../context/context";
 import FocusedStatusBar from '../../../components/FocusedStatusBar';
 
@@ -72,7 +72,7 @@ const ViewAll_Info = ({ route, navigation }) => {
   useEffect(() => {
     if (typeof route.params == "undefined") return
     let { reloadVal } = route.params;
- 
+
     setReload(reloadVal)
   }, [route.params]);
 
@@ -83,31 +83,13 @@ const ViewAll_Info = ({ route, navigation }) => {
       }}>
 
       <ImageBackground
-          source={require('../../../assets/images/EcoExplorer/view_all_bg_2.png')}
-          style={{ width: "100%", height: "100%" }}>
+        source={require('../../../assets/images/EcoExplorer/view_all_bg_2.png')}
+        style={{ width: "100%", height: "100%" }}>
 
-          <FocusedStatusBar
-            background={COLORS.primary}
-          />
-      {/* <ScrollView> */}
-      {/* {loading ?
-        ( */}
-          {/* <View
-            style={{
-              justifyContent: "center", //Centered horizontally
-              alignItems: "center", //Centered vertically
-              flex: 1,
-              marginTop: -10,
-            }}
-          >
-            <ActivityIndicator
-              animating={loading}
-              color="#015C92"
-              hidesWhenStopped={true}
-              size="large"
-            />
-          </View> */}
-        {/* ) : ( */}
+        <FocusedStatusBar
+          background={COLORS.primary}
+        />
+        <ScrollView>
 
           <View style={styles.listContainer}>
 
@@ -118,7 +100,7 @@ const ViewAll_Info = ({ route, navigation }) => {
               width: 300,
               alignSelf: "center",
               textAlign: "center",
-              marginTop:30,
+              marginTop: 30,
               textShadowColor: 'rgba(0, 0, 0, 0.75)',
               textShadowOffset: { width: -1, height: 1 },
               textShadowRadius: 2
@@ -135,7 +117,7 @@ const ViewAll_Info = ({ route, navigation }) => {
               textShadowColor: 'rgba(0, 0, 0, 0.75)',
               textShadowOffset: { width: -1, height: 1 },
               textShadowRadius: 1
-                            
+
             }}>Hi 😊 {typeof user != "undefined" && user.name}! </Text>
 
 
@@ -146,7 +128,7 @@ const ViewAll_Info = ({ route, navigation }) => {
               width: 500,
               alignSelf: "center",
               textAlign: "center",
-              marginTop:10,
+              marginTop: 10,
             }}>━━━━━━━ View All your added Informations ━━━━━━━</Text>
 
             <TouchableOpacity disabled={true}
@@ -159,8 +141,8 @@ const ViewAll_Info = ({ route, navigation }) => {
                 paddingVertical: 10,
                 borderRadius: 14,
                 paddingHorizontal: 10,
-                marginLeft:135,
-                elevation:10,
+                marginLeft: 135,
+                elevation: 10,
                 marginBottom: 20
               }}
             >
@@ -170,14 +152,14 @@ const ViewAll_Info = ({ route, navigation }) => {
                   fontFamily: FONTS.bold,
                   fontSize: 13,
                   marginLeft: 5,
-                  
+
                 }}>
                 Indoor Plants
               </Text>
             </TouchableOpacity>
 
             <FlatList
-              
+
               keyExtractor={(key) => {
                 return key._id;
               }}
@@ -188,7 +170,7 @@ const ViewAll_Info = ({ route, navigation }) => {
                   <Card
 
                     // here press can see each details indivitually
-                    
+
                     elevation={5}
                     style={styles.eventCard}
                     mode={"elevated"}
@@ -272,22 +254,8 @@ const ViewAll_Info = ({ route, navigation }) => {
                 );
               }}
             />
-            {/* <Snackbar
-            visible={visible}
-            style={styles.snackbar}
-            onDismiss={onDismissSnackBar}
-            action={{
-              label: "Dismiss",
-              onPress: () => {
-                setVisible(false);
-              },
-            }}
-          >
-            {snackbarMessage}
-          </Snackbar> */}
           </View>
-        {/* )} */}
-        {/* </ScrollView> */}
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   )
