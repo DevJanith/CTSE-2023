@@ -5,7 +5,7 @@ const aquaOrgAPI = axios.create({
   //   baseURL: "http://192.168.1.3:8000/rest-api/v1/",
   // baseURL: "http://192.168.100.84:5000/rest-api/v1/",
   // baseURL: "http://192.168.8.107:8000/rest-api/v1/",
-  baseURL: "http://192.168.8.107:5000/rest-api/v1/",
+  baseURL: "http://192.168.1.3:5000/rest-api/v1/",
   // baseURL : "http://aqua-org.herokuapp.com/rest-api/v1/"
 });
 
