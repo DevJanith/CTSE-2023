@@ -46,11 +46,9 @@ const AllDonation = () => {
 
     const handelDetete = (item) => {
         axios({
-            url: "http://192.168.8.107:5000/rest-api/v1/donation",//"http://localhost:8080/api/student/",
+            url: "http://192.168.8.107:5000/rest-api/v1/donation/" + item._id,//"http://localhost:8080/api/student/",
             method: "DELETE",
-            data: {
-                student_id: item.student_id
-            }
+
         }).then((res) => {
             getList();
         })
@@ -89,7 +87,7 @@ const AllDonation = () => {
                 "status": Number(status) || 0,
             }
             axios({
-                url: "http://192.168.8.107:5000/rest-api/v1/donation",//"https://nitc.cleverapps.io/api/courses/",
+                url: "http://192.168.8.107:5000/rest-api/v1/donation/" + _id,//"https://nitc.cleverapps.io/api/courses/",
                 method: "PUT",
                 data: data,
                 headers: {
@@ -110,7 +108,7 @@ const AllDonation = () => {
 
     const handleEdit = (item) => {
         setViisble(true)
-        setHideId(item.course_id)
+        setHideId(item._id)
         setName(item.name)
         setAmount(item.amount + "")
         setLocation(item.location)
@@ -208,6 +206,10 @@ const AllDonation = () => {
                         <View style={styles.item_course} key={index}>
                             <View>
                                 <Text style={styles.txt_name}>{index + 1}. {item.name}</Text>
+                                <Text style={styles.txt_location}>{ }* {item.location}</Text>
+                                <Text style={styles.txt_contactNo}>{ }* {item.contactNo}</Text>
+                                <Text style={styles.txt_email}>{ }* {item.email}</Text>
+                                <Text style={styles.txt_amount}>{ }* {item.amount}</Text>
                                 <Text style={styles.txt_item}>{item.code}</Text>
                                 {/* <Text style={item.status === 1 ? styles.txt_enabled : styles.txt_disabled}>{item.status === 1 ? "Enabled" : "Disabled"}</Text> */}
                             </View>

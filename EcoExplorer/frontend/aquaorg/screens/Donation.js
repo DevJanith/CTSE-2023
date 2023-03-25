@@ -338,6 +338,7 @@ const styles = StyleSheet.create({
 
   container: {
     flexDirection: "column",
+    
   },
   textStyle: {
     fontSize: 40,
@@ -355,7 +356,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 25,
     padding: 0,
-    margin: 10,
+    margin: 100,
     color: "white",
   },
 
