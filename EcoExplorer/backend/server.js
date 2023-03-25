@@ -11,6 +11,8 @@ import marksRoutes from "./routes/marks.routes.js";
 import infoRoutes from "./routes/info.routes.js";
 import interestedRoutes from "./routes/interested.routes.js";
 import eventRoutes from "./routes/events.routes.js";
+import donationRoutes from "./routes/donation.routes.js";
+import creativityRoutes from "./routes/creativity.routes.js";
 
 dotenv.config();
 const app = express();
@@ -30,6 +32,8 @@ app.use("/rest-api/v1/question-answers", questionAnswersRoutes);
 app.use("/rest-api/v1/info", infoRoutes);
 app.use("/rest-api/v1/events", eventRoutes);
 app.use("/rest-api/v1/interested", interestedRoutes);
+app.use("/rest-api/v1/donation",donationRoutes);
+app.use("/rest-api/v1/creativity",creativityRoutes);
 
 const CONNECTION_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.b6wbfao.mongodb.net/?retryWrites=true&w=majority`;
 
