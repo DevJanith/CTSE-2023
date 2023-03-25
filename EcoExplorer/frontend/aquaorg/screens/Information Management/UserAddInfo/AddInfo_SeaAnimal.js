@@ -101,10 +101,19 @@ const AddInfo_SeaAnimal = ({ navigation }) => {
 
             </View>
 
+            <Image
+                    source={require('../../../assets/images/EcoExplorer/Indoor.png')}
+                    style={{ 
+                        width: 60, 
+                        height: 60,
+                        marginLeft: 185
+                    }}
+            />
+
             <Text style={{
                 color: "#000000",
                 fontFamily: FONTS.bold,
-                marginTop: 20,
+                marginTop: 10,
                 fontSize: 30,
                 width: 200,
                 alignSelf: "center",

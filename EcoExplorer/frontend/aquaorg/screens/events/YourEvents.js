@@ -95,6 +95,7 @@ const YourEvents = ({ route, navigation }) => {
                       style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
+                        color: COLORS.darkTextColor,
                       }}
                     >
                       <Title style={{ fontWeight: "bold" }}>{item.name}</Title>

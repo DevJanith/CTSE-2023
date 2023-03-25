@@ -150,57 +150,39 @@ const UpdateInfo = ({ route, navigation }) => {
     return (
 
         <ImageBackground
-            source={require('../../../assets/images/Info/add_Info_bg.png')}
+            source={require('../../../assets/images/EcoExplorer/view_all_bg_2.png')}
             style={{
                 width: "100%",
-                height: "113%"
+                height: "110%"
             }}
         >
-
-            <View style={{
-                flexDirection: "row",
-                width: "100%",
-                paddingHorizontal: 20
-            }}>
-                <TouchableOpacity
-                    onPress={() => { navigation.push('AddInfoHome') }}
-                    style={{
-                        paddingHorizontal: 10,
-                        paddingVertical: 13,
-                        borderRadius: 10,
-                        marginTop: 30,
-                        backgroundColor: 'rgba(52, 52, 52, 0.4)'
-                    }}
-                >
-                    <Image
-                        source={require('../../../assets/images/Info/left_arrow.png')}
-                        style={{ height: 15, width: 20 }}
-                    />
-                </TouchableOpacity>
-
-            </View>
 
             <Text style={{
                 color: "#000000",
                 fontFamily: FONTS.bold,
-                fontSize: 30,
-                width: 200,
+                fontSize: 35,
+                width: 300,
                 alignSelf: "center",
                 textAlign: "center",
-            }}>Life Below Water</Text>
+                marginTop: 30,
+                textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                textShadowOffset: { width: -1, height: 1 },
+                textShadowRadius: 2
+            }}>Life of Plants!</Text>
 
             <TouchableOpacity disabled={true}
                 style={{
                     flexDirection: "row",
-                    backgroundColor: "#015C92",
+                    backgroundColor: "#357f54",
                     alignItems: "center",
-                    marginTop: 10,
-                    width: 105,
+                    marginTop: 30,
+                    width: 115,
                     paddingVertical: 10,
-                    borderRadius: 50,
+                    borderRadius: 30,
                     paddingHorizontal: 10,
-                    marginLeft: 165,
-                    elevation: 10
+                    marginLeft: 150,
+                    elevation: 10,
+                    marginBottom: 50
                 }}
             >
                 <Text
@@ -208,9 +190,10 @@ const UpdateInfo = ({ route, navigation }) => {
                         color: "#FFF",
                         fontFamily: FONTS.bold,
                         fontSize: 13,
-                        marginLeft: 5
+                        marginLeft: 5,
+
                     }}>
-                    Sea Animal
+                    Indoor Plants
                 </Text>
             </TouchableOpacity>
 
@@ -228,6 +211,7 @@ const UpdateInfo = ({ route, navigation }) => {
                 backgroundColor: "#FFFFFF",
                 borderRadius: 50,
                 marginTop: -20,
+                elevation: 10
             }}
                 scrollViewProps={{ showsVerticalScrollIndicator: false }}
             >
@@ -399,20 +383,20 @@ const UpdateInfo = ({ route, navigation }) => {
                                 backgroundColor: "#D41212",
                                 alignItems: "center",
                                 marginTop: 20,
-                                marginLeft: 60,
-                                width: 100,
+                                marginLeft: 55,
+                                width: 120,
                                 paddingVertical: 10,
-                                borderRadius: 18,
+                                borderRadius: 20,
                                 paddingHorizontal: 10,
                             }}
                         >
                             <Image
                                 source={require('../../../assets/images/Info/close.png')}
                                 style={{
-                                    marginLeft: 8,
+                                    marginLeft: 18,
                                     width: 12,
                                     height: 12.,
-                                    marginRight: 5
+                                    marginRight: 5,
                                 }}
                             />
                             <Text
@@ -435,13 +419,13 @@ const UpdateInfo = ({ route, navigation }) => {
                             // onPress={() => { navigation.push('InfoCategories') }}
                             style={{
                                 flexDirection: "row",
-                                backgroundColor: "#015C92",
+                                backgroundColor: "#357f54",
                                 alignItems: "center",
                                 marginTop: 20,
-                                marginLeft: -10,
-                                width: 100,
+                                marginLeft: -30,
+                                width: 120,
                                 paddingVertical: 10,
-                                borderRadius: 18,
+                                borderRadius: 19,
                                 paddingHorizontal: 10,
                             }}
                             onPress={() => updateSeaAnimal()}
@@ -449,7 +433,7 @@ const UpdateInfo = ({ route, navigation }) => {
                             <Image
                                 source={require('../../../assets/images/Info/submit.png')}
                                 style={{
-                                    marginLeft: 5,
+                                    marginLeft: 15,
                                     marginRight: 5,
                                     width: 18,
                                     height: 18
