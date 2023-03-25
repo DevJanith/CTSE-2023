@@ -301,7 +301,7 @@ const Donation = ({ navigation }) => {
             }}
           >
             <Image
-              source={assets.b1}
+              source={require("../assets/images/EcoExplorer/main_home_bg.png")}
               resizeMode="cover"
               style={{
                 width: "100%",
@@ -334,6 +334,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
+    color: "black"
   },
 
   container: {
@@ -354,10 +355,10 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 32,
     padding: 0,
-    margin: 100,
-    color: "white",
+    margin: 85,
+    color: "black",
   },
 
   eventCard: {
@@ -375,7 +376,7 @@ const styles = StyleSheet.create({
     minHeight: 140,
   },
   topEventsContainer: {
-    // paddingRight: 10,
+    color: "black"// paddingRight: 10,
   },
 
   fab: {

@@ -18,8 +18,11 @@ const AllDonation = () => {
     const [name, setName] = useState("");
     const [amount, setAmount] = useState(0);
     const [location, setLocation] = useState("");
+    const [contactNo, setContactNo] = useState("");
+    const [email, setEmail] = useState("");
     const [status, setStatus] = useState(1);
     const [hideId, setHideId] = useState(null);
+    const [donation_Id, setDonation_Id] = useState(null);
 
     useEffect(() => {
         getList()
@@ -60,6 +63,8 @@ const AllDonation = () => {
                 "name": name,
                 "amount": Number(amount) || 0,
                 "location": location,
+                "contactNo": contactNo,
+                "email": email,
                 "status": Number(status) || 0,
             }
             axios({
@@ -75,6 +80,8 @@ const AllDonation = () => {
                 setName("")
                 setAmount(0)
                 setLocation("")
+                setContactNo("")
+                setEmail("")
                 setStatus(1)
                 setViisble(false)
             })
@@ -84,10 +91,12 @@ const AllDonation = () => {
                 "name": name,
                 "amount": Number(amount) || 0,
                 "location": location,
+                "contactNo": contactNo,
+                "email": email,
                 "status": Number(status) || 0,
             }
             axios({
-                url: "http://192.168.8.107:5000/rest-api/v1/donation/" + _id,//"https://nitc.cleverapps.io/api/courses/",
+                url: "http://192.168.8.107:5000/rest-api/v1/donation/" +donation_id,//"https://nitc.cleverapps.io/api/courses/",
                 method: "PUT",
                 data: data,
                 headers: {
@@ -99,6 +108,8 @@ const AllDonation = () => {
                 setName("")
                 setAmount(0)
                 setLocation("")
+                setContactNo("")
+                setEmail("")
                 setStatus(1)
                 setViisble(false)
             })
@@ -108,10 +119,12 @@ const AllDonation = () => {
 
     const handleEdit = (item) => {
         setViisble(true)
-        setHideId(item._id)
+        setHideId(item.donation_id)
         setName(item.name)
         setAmount(item.amount + "")
         setLocation(item.location)
+        setContactNo(item.contactNo)
+        setEmail(item.email)
         setStatus(item.status + "")
     }
 
@@ -127,10 +140,17 @@ const AllDonation = () => {
     const onChangeAmount = (value) => {
         setAmount(value)
     }
-
     const onChangeLocation = (value) => {
         setLocation(value)
     }
+
+    const onChangeContactNo = (value) => {
+        setContactNo(value)
+    }
+    const onChangeEmail = (value) => {
+        setEmail(value)
+    }
+   
 
     // const addDetails = ()=>{
     //     axios.post('http://192.168.8.107:5000/rest-api/v1/donation/').then((response)=>{
@@ -182,6 +202,18 @@ const AllDonation = () => {
                             style={styles.text_input}
                             placeholder="Location"
                             onChangeText={onChangeLocation}
+                        />
+                         <TextInput
+                            value={contactNo}
+                            style={styles.text_input}
+                            placeholder="ContactNo"
+                            onChangeText={onChangeContactNo}
+                        />
+                         <TextInput
+                            value={email}
+                            style={styles.text_input}
+                            placeholder="Email"
+                            onChangeText={onChangeEmail}
                         />
                         <TextInput
                             value={status}
@@ -239,7 +271,7 @@ const styles = StyleSheet.create({
 
     form: {
         padding: 15,
-        // backgroundColor : "#e3e3e3",
+        backgroundColor : "#e3e3e3",
         marginTop: 10
     },
 
@@ -258,7 +290,7 @@ const styles = StyleSheet.create({
     },
     header_container: {
         padding: 15,
-        backgroundColor: "#eeeeee",
+        backgroundColor: "green",
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -269,7 +301,8 @@ const styles = StyleSheet.create({
     item_course: {
         padding: 15,
         borderBottomWidth: 1,
-        borderBottomColor: "#e2e2e2",
+        borderBottomColor: "green",
+        backgroundColor : "lightgreen",
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -315,10 +348,10 @@ const styles = StyleSheet.create({
     },
     btnNewContainer: {
         padding: 10,
-        backgroundColor: "#000",
+        backgroundColor: "green",
     },
     textButton: {
         textAlign: "center",
-        color: "#FFF"
+        color: "white"
     },
 })

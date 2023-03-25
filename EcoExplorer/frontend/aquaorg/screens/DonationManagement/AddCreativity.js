@@ -28,7 +28,7 @@ import {
     const [location, setLocation] = useState();
     const [email, setEmail] = useState();
     const [description, setDescription] = useState();
-    const [image, setImage] = useState();
+    
     const [loading, setLoading] = useState(false);
   
     // validations
@@ -36,7 +36,7 @@ import {
     const [checkValidaLocation, setCheckValidLocation] = useState(false);
     const [checkValidaEmail, setCheckValidEmail] = useState(false);
     const [checkValidaDescription, setCheckValidDescription] = useState(false);
-    const [checkValidaImage, setCheckValidImage] = useState(false);
+    
   
     const [visible, setVisible] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -51,9 +51,9 @@ import {
       handleCheckLocation(location);
       handleCheckEmail(email);
       handleCheckDescription(description);
-      handleCheckImage(image);
+      
   
-      if (name && location && email && description && image) {
+      if (name && location && email && description) {
         setLoading(true);
         const data = {
          
@@ -61,7 +61,7 @@ import {
           location: location,
           email: email,
           description: description,
-          image: image,
+          
           
         };
   
@@ -100,9 +100,7 @@ import {
         if (!description) {
           setCheckValidDescription(true);
         }
-        if (!image) {
-          setCheckValidImage(true);
-        }
+       
         
       }
     };
@@ -136,13 +134,7 @@ import {
         setCheckValidDescription(true);
       }
     }
-    function handleCheckImage(text) {
-      if (text) {
-        setCheckValidImage(false);
-      } else {
-        setCheckValidImage(true);
-      }
-    }
+   
     return (
       <SafeAreaView>
         <ScrollView>
@@ -214,22 +206,7 @@ import {
             ) : (
               <Text style={styles.textFailed}></Text>
             )}
-            {/* <TextInput
-              mode="outlined"
-              activeOutlineColor="#015C92"
-              label="Upload Your Creative Image"
-              style={styles.inputField}
-              value={image}
-              onChangeText={(text) => {
-                setImage(text);
-                handleCheckImage(text);
-              }}
-            />
-            {checkValidaImage ? (
-              <Text style={styles.textFailed}>*Image field is required</Text>
-            ) : (
-              <Text style={styles.textFailed}></Text>
-            )} */}
+           
           </View>
   
           

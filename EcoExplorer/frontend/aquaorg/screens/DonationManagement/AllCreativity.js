@@ -17,11 +17,11 @@ const AllCreativity = () => {
     const [visible, setViisble] = useState(false);
 
     const [name, setName] = useState("");
-    // const [amount, setAmount] = useState(0);
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [status, setStatus] = useState(1);
     const [hideId, setHideId] = useState(null);
+    const [creativity_Id, setCreativity_Id] = useState(null);
 
     useEffect(() => {
         getList()
@@ -36,23 +36,14 @@ const AllCreativity = () => {
         }).catch((err) => {
             console.log(err)
         })
-        // fetch("http://192.168.8.107:5000/rest-api/v1/creativity/", {
-        //     // url:,//"https://nitc.cleverapps.io/api/courses",
-        //     method: "GET"
-        // }).then(res => {
-        //     return res.json()
-        // }).then(res => {
-        //     alert(res.list.length)
-        // })
+       
     }
 
     const handelDetete = (item) => {
         axios({
-            url: "http://192.168.8.107:5000/rest-api/v1/creativity",//"http://localhost:8080/api/student/",
+            url: "http://192.168.8.107:5000/rest-api/v1/creativity/" + item._id,//"http://localhost:8080/api/student/",
             method: "DELETE",
-            data: {
-                student_id: item.student_id
-            }
+
         }).then((res) => {
             getList();
         })
@@ -62,7 +53,7 @@ const AllCreativity = () => {
         if (hideId == null) {
             var data = {
                 "name": name,
-                // "amount": Number(amount) || 0,
+                
                 "location": location,
                 "description": description,
                 "status": Number(status) || 0,
@@ -78,7 +69,6 @@ const AllCreativity = () => {
                 getList();
 
                 setName("")
-                // setAmount(0)
                 setLocation("")
                 setDescription("")
                 setStatus(1)
@@ -88,13 +78,12 @@ const AllCreativity = () => {
             var data = {
                 "course_id": hideId,
                 "name": name,
-                // "amount": Number(amount) || 0,
                 "location": location,
                 "description": description,
                 "status": Number(status) || 0,
             }
             axios({
-                url: "http://192.168.8.107:5000/rest-api/v1/creativity",//"https://nitc.cleverapps.io/api/courses/",
+                url: "http://192.168.8.107:5000/rest-api/v1/creativity/"+creativity_id , //"https://nitc.cleverapps.io/api/courses/",
                 method: "PUT",
                 data: data,
                 headers: {
@@ -104,7 +93,6 @@ const AllCreativity = () => {
                 getList();
 
                 setName("")
-                // setAmount(0)
                 setLocation("")
                 setDescription("")
                 setStatus(1)
@@ -116,9 +104,8 @@ const AllCreativity = () => {
 
     const handleEdit = (item) => {
         setViisble(true)
-        setHideId(item.course_id)
+        setHideId(item.creativity_id)
         setName(item.name)
-        // setAmount(item.amount + "")
         setLocation(item.location)
         setDescription(item.description)
         setStatus(item.status + "")
@@ -133,16 +120,13 @@ const AllCreativity = () => {
         setName(value)
     }
 
-    // const onChangeAmount = (value) => {
-    //     setAmount(value)
-    // }
-
     const onChangeLocation = (value) => {
         setLocation(value)
     }
+
     const onChangeDescription = (value) => {
-      setDescription(value)
-  }
+        setDescription(value)
+    }
 
     // const addDetails = ()=>{
     //     axios.post('http://192.168.8.107:5000/rest-api/v1/donation/').then((response)=>{
@@ -183,19 +167,14 @@ const AllCreativity = () => {
                             placeholder="Name"
                             onChangeText={onChangeName}
                         />
-                        {/* <TextInput
-                            value={amount}
-                            style={styles.text_input}
-                            placeholder="Amount"
-                            onChangeText={onChangeAmount}
-                        /> */}
+                        
                         <TextInput
                             value={location}
                             style={styles.text_input}
                             placeholder="Location"
                             onChangeText={onChangeLocation}
                         />
-                         <TextInput
+                        <TextInput
                             value={description}
                             style={styles.text_input}
                             placeholder="Description"
@@ -224,6 +203,9 @@ const AllCreativity = () => {
                         <View style={styles.item_course} key={index}>
                             <View>
                                 <Text style={styles.txt_name}>{index + 1}. {item.name}</Text>
+                                <Text style={styles.txt_location}>{ }* {item.location}</Text>
+                                
+                                <Text style={styles.txt_description}>{ }* {item.description}</Text>
                                 <Text style={styles.txt_item}>{item.code}</Text>
                                 {/* <Text style={item.status === 1 ? styles.txt_enabled : styles.txt_disabled}>{item.status === 1 ? "Enabled" : "Disabled"}</Text> */}
                             </View>
@@ -253,7 +235,7 @@ const styles = StyleSheet.create({
 
     form: {
         padding: 15,
-        // backgroundColor : "#e3e3e3",
+        backgroundColor : "#e3e3e3",
         marginTop: 10
     },
 
@@ -272,7 +254,7 @@ const styles = StyleSheet.create({
     },
     header_container: {
         padding: 15,
-        backgroundColor: "#eeeeee",
+        backgroundColor: "green",
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -283,7 +265,8 @@ const styles = StyleSheet.create({
     item_course: {
         padding: 15,
         borderBottomWidth: 1,
-        borderBottomColor: "#e2e2e2",
+        borderBottomColor: "green",
+        backgroundColor : "lightgreen",
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -329,10 +312,10 @@ const styles = StyleSheet.create({
     },
     btnNewContainer: {
         padding: 10,
-        backgroundColor: "#000",
+        backgroundColor: "green",
     },
     textButton: {
         textAlign: "center",
-        color: "#FFF"
+        color: "white"
     },
 })
